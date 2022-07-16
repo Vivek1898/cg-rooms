@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "antd/dist/antd.css";
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
 import moment from "moment";
 
 import Room from "../components/Room";
@@ -81,7 +81,7 @@ function Homescreen() {
           }
         }
         //
-        if (availability == true || room.currentbookings.length == 0) {
+        if (availability === true || room.currentbookings.length === 0) {
           tempRooms.push(room);
         }
       }
@@ -100,7 +100,7 @@ function Homescreen() {
     console.log(type);
     if (type !== "all") {
       const tempRooms = duplicateRooms.filter(
-        (x) => x.type.toLowerCase() == type.toLowerCase()
+        (x) => x.type.toLowerCase() === type.toLowerCase()
       );
       setRooms(tempRooms);
     } else {

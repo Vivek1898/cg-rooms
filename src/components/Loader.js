@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import PropagateLoader from "react-spinners/PacmanLoader";
 
 function Loader() {
-  let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#ffffff");
+  let [loading] = useState(true);
 
   return (
     <div style={{ marginTop: "150px" }}>

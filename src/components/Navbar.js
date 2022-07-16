@@ -1,7 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Mess from "../screens/MessScreen";
 
 function Navbar() {
   const user = JSON.parse(localStorage.getItem("currentUser"));

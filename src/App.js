@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Homescreen from "./screens/Homescreen";
@@ -16,7 +16,7 @@ import GymScreen from "./screens/GymScreen";
 import Home1 from "./screens/Home";
 import Owner from "./screens/Owner";
 import FindRoomates from "./screens/FindRoomates";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LaundaryScreen from "./screens/LaundaryScreen";
 
