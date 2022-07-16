@@ -1,6 +1,3 @@
-// Import required images.
-import logo from "../images/CGLogoWhite.png";
-
 const Nav = () => {
   return (
     <div className="nav">

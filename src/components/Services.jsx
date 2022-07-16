@@ -1,10 +1,4 @@
 import Image from "./Image";
-import room from "../images/room.jpeg";
-import food from "../images/food.jpeg";
-import laundry from "../images/laundry.jpeg";
-import roommates from "../images/roommates.jpeg";
-import gym from "../images/gym.jpeg";
-import maid from "../images/maid.jpeg";
 
 const ServicesSection = () => {
   return (
