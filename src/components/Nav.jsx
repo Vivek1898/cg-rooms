@@ -1,12 +1,15 @@
 // Import required images.
-import logo from '../images/CGLogoWhite.png';
+import logo from "../images/CGLogoWhite.png";
 
 const Nav = () => {
-
   return (
-    <div className='nav'>
+    <div className="nav">
       <a href="/">
-        <img src="https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886868/fianl/CGLogoBlack_wfuwso.png" alt="logo" className='hero-logo' />
+        <img
+          src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/home-bg_hgu3rq.png"
+          alt="logo"
+          className="hero-logo"
+        />
       </a>
 
       {/* <div className='login'>

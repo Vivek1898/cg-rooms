@@ -10,7 +10,7 @@
 }
 
 .hero {
-  background-image: url('https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886984/fianl/home-bg_htftoi.png');
+  background-image: url("https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886984/fianl/home-bg_htftoi.png");
   background-size: cover;
 }
 
@@ -22,7 +22,6 @@
   padding: 0 6rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
-
 }
 
 .hero-logo {
@@ -70,7 +69,7 @@
 }
 
 .title p {
-font-size: 1.25rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -82,7 +81,7 @@ font-size: 1.25rem;
   background-color: rgb(255, 255, 255);
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color:black;
+  color: black;
   border-radius: 0.75rem;
 }
 
@@ -138,7 +137,7 @@ font-size: 1.25rem;
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--primary);
-  background-image: url('https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886865/fianl/banner_urskaa.png');
+  background-image: url("https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886865/fianl/banner_urskaa.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -148,7 +147,7 @@ font-size: 1.25rem;
 }
 
 .banner p {
-font-size: 3rem;
+  font-size: 3rem;
   line-height: 1;
   color: rgb(255, 255, 255);
 }
@@ -331,7 +330,8 @@ font-size: 3rem;
   font-weight: 700;
 }
 
-.direct-contact-div, .social-div {
+.direct-contact-div,
+.social-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,66 +394,64 @@ a img {
   line-height: 1;
   color: var(--primary);
   font-weight: 700;
-  background-color: rgba(93, 169, 233, 0.3);;
+  background-color: rgba(93, 169, 233, 0.3);
 }
 
 @media screen and (max-width: 640px) {
   .nav {
-      justify-content: center;
+    justify-content: center;
   }
 
   .login {
-      display: none;
+    display: none;
   }
 
   .hero-des .title h1 {
-      font-size: 3rem;
+    font-size: 3rem;
   }
 
   .banner {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .banner p {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .footer {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
   }
 
   .company-des {
-      justify-content: center;
-      align-items: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .stars {
-      display: none;
+    display: none;
   }
 
   .footer-des-card {
-      display: none;
+    display: none;
   }
 
   .footer-des {
-      justify-content: center;
+    justify-content: center;
   }
 
   .contact {
-      justify-content: center;
-      align-items: center;
-      padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
   }
 
   .social-div {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
-
-
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 body {

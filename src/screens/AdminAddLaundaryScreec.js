@@ -95,7 +95,7 @@ function AdminAddLaundaryScreen() {
                 },
               ]}
             >
-                  <Input />
+              <Input />
             </Form.Item>
             <Form.Item
               name="phonenumber"
@@ -152,7 +152,7 @@ function AdminAddLaundaryScreen() {
             >
               <Input />
             </Form.Item>
-            
+
             <Form.Item {...tailLayout}>
               <Button type="success" htmlType="submit">
                 Add

@@ -63,7 +63,10 @@ function MessBookingscreen({ match }) {
 
     try {
       setLoading(true);
-      const result = await axios.post("/api/messbooking/bookmess", bookingDetails);
+      const result = await axios.post(
+        "/api/messbooking/bookmess",
+        bookingDetails
+      );
       setLoading(false);
       Swal.fire(
         "Congratulations",

@@ -25,7 +25,6 @@ function AdminRoomScreen() {
     { title: "address", dataIndex: "address", key: "address" },
     { title: "phonenumber", dataIndex: "phonenumber", key: "phonenumber" },
     { title: "rentperday", dataIndex: "rentperday", key: "rentperday" },
-
   ];
 
   async function fetchMyData() {

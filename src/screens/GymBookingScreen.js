@@ -63,7 +63,10 @@ function GymBookingscreen({ match }) {
 
     try {
       setLoading(true);
-      const result = await axios.post("/api/gymbooking/bookgym", bookingDetails);
+      const result = await axios.post(
+        "/api/gymbooking/bookgym",
+        bookingDetails
+      );
       setLoading(false);
       Swal.fire(
         "Congratulations",

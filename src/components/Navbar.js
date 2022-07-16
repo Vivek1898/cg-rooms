@@ -1,7 +1,7 @@
 import React from "react";
-import { render } from 'react-dom'
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Mess from "../screens/MessScreen"
+import { render } from "react-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Mess from "../screens/MessScreen";
 
 function Navbar() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -15,49 +15,44 @@ function Navbar() {
     if (user) {
       return (
         <ul className="navbar-nav mr-5">
-         
-        
-           <li class="nav-item">
-           <a className="nav-link" href="/maid">
-           Maid
-          </a>
-      </li>
-      <li class="nav-item">
-           <a className="nav-link" href="/mess">
-           Mess
-          </a>
-      </li>
-
-      <li className="nav-item active">
-          <a className="nav-link" href="/home">
-           Rooms
-          </a>
+          <li class="nav-item">
+            <a className="nav-link" href="/maid">
+              Maid
+            </a>
           </li>
-           <li className="nav-item active">
-          <a className="nav-link" href="/laundary">
-           Laundary
-          </a>
-          </li>
-          <li className="nav-item active">
-          <a className="nav-link" href="/gym">
-           Gym
-          </a>
-          </li>
-          <li className="nav-item active">
-          <a className="nav-link" href="/bookurpg">
-           Owner
-          </a>
+          <li class="nav-item">
+            <a className="nav-link" href="/mess">
+              Mess
+            </a>
           </li>
 
           <li className="nav-item active">
-          <a className="nav-link" href="/roomates">
-           Room mates
-          </a>
+            <a className="nav-link" href="/home">
+              Rooms
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a className="nav-link" href="/laundary">
+              Laundary
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a className="nav-link" href="/gym">
+              Gym
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a className="nav-link" href="/bookurpg">
+              Owner
+            </a>
           </li>
 
+          <li className="nav-item active">
+            <a className="nav-link" href="/roomates">
+              Room mates
+            </a>
+          </li>
 
-         
-          
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -85,45 +80,43 @@ function Navbar() {
     }
 
     return (
-      
       <ul className="navbar-nav">
         <li className="nav-item active">
           <a className="nav-link" href="/roomates">
-           Room mates
-          </a>
-          </li>
-
-<li className="nav-item active">
-          <a className="nav-link" href="/bookurpg">
-           Owner
-          </a>
-          </li>
-          <li className="nav-item active">
-          <a className="nav-link" href="/home">
-           Rooms
-          </a>
-          </li>
-           <li className="nav-item active">
-          <a className="nav-link" href="/laundary">
-           Laundary
-          </a>
-          </li>
-          <li className="nav-item active">
-          <a className="nav-link" href="/gym">
-           Gym
-          </a>
-          </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/mess">
-           Mess
-          </a>
-          </li>
-          <li className="nav-item active">
-          <a className="nav-link" href="/maid">
-           Maid
+            Room mates
           </a>
         </li>
 
+        <li className="nav-item active">
+          <a className="nav-link" href="/bookurpg">
+            Owner
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/home">
+            Rooms
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/laundary">
+            Laundary
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/gym">
+            Gym
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/mess">
+            Mess
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/maid">
+            Maid
+          </a>
+        </li>
 
         <li className="nav-item active">
           <a className="nav-link" href="/register">
@@ -140,15 +133,14 @@ function Navbar() {
   };
 
   return (
- 
- <div>
+    <div>
       <nav className="navbar navbar-expand-lg">
         <a className="navbar-brand" href="/">
-        College Grahasthi
+          College Grahasthi
         </a>
-       
-          {/* <Link to="/maid">Linked Maid</Link> */}
-         
+
+        {/* <Link to="/maid">Linked Maid</Link> */}
+
         <button
           className="navbar-toggler"
           type="button"
@@ -162,19 +154,13 @@ function Navbar() {
             <i class="fas fa-bars" style={{ color: "white" }}></i>
           </span>
         </button>
-    
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        
           {navAction()}
         </div>
-       
       </nav>
       {/* <Route path='/mess' component={Mess} /> */}
     </div>
-    
-  
-   
   );
 }
 

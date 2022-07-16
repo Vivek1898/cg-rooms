@@ -48,12 +48,11 @@ function ProfileScreen() {
           <MyBookingScreen></MyBookingScreen>
         </TabPane>
         <TabPane tab="Mess Booking" key="3">
-        <MyMessBookingScreen></MyMessBookingScreen>
+          <MyMessBookingScreen></MyMessBookingScreen>
         </TabPane>
         <TabPane tab="Gym Booking" key="4">
-        <MyGymBookingScreen></MyGymBookingScreen>
+          <MyGymBookingScreen></MyGymBookingScreen>
         </TabPane>
-        
       </Tabs>
     </div>
   );

@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Homescreen from "./screens/Homescreen";
@@ -12,23 +11,22 @@ import LoginScreen from "./screens/LoginScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import AdminScreen from "./screens/AdminScreen";
 import LandingScreen from "./screens/LandingScreen";
-import MaidScreen from "./screens/MaidScreen"
-import MessScreen from "./screens/MessScreen"
-import GymScreen from "./screens/GymScreen"
-import Home1 from "./screens/Home"
-import Owner from "./screens/Owner"
-import FindRoomates from "./screens/FindRoomates"
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import MaidScreen from "./screens/MaidScreen";
+import MessScreen from "./screens/MessScreen";
+import GymScreen from "./screens/GymScreen";
+import Home1 from "./screens/Home";
+import Owner from "./screens/Owner";
+import FindRoomates from "./screens/FindRoomates";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import LaundaryScreen from "./screens/LaundaryScreen";
 
 function App() {
   return (
     <div className="App">
-       <ToastContainer position='top-center'/>
+      <ToastContainer position="top-center" />
       <Navbar />
       <BrowserRouter>
-
         <Route path="/LandingScreen" exact component={LandingScreen} />
         <Route path="/home" exact component={Homescreen} />
         <Route
@@ -36,7 +34,7 @@ function App() {
           exact
           component={MessBookingScreen}
         />
-          <Route
+        <Route
           path="/bookgym/:gymid/:fromdate/:todate"
           exact
           component={GymBookingScreen}
@@ -46,7 +44,7 @@ function App() {
           exact
           component={Bookingscreen}
         />
-       
+
         <Route path="/register" exact component={RegisterScreen} />
         <Route path="/login" exact component={LoginScreen} />
         <Route path="/profile" exact component={ProfileScreen} />
@@ -59,8 +57,6 @@ function App() {
         <Route path="/laundary" exact component={LaundaryScreen} />
         <Route path="/bookurpg" exact component={Owner} />
         <Route path="/roomates" exact component={FindRoomates} />
-        
-
       </BrowserRouter>
     </div>
   );

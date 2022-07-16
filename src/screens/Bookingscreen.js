@@ -14,7 +14,7 @@ function Bookingscreen({ match }) {
   const [bookings, setBookings] = useState({});
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalDays, setTotalDays] = useState(0);
-  const [maxcount,setMaxCout]=useState(0)
+  const [maxcount, setMaxCout] = useState(0);
 
   const roomid = match.params.roomid;
   const fromdate = moment(match.params.fromdate, "DD-MM-YYYY");
@@ -25,7 +25,7 @@ function Bookingscreen({ match }) {
     if (!user) {
       window.location.href = "/login";
     }
-   
+
     async function fetchMyAPI() {
       try {
         setError("");
@@ -35,60 +35,52 @@ function Bookingscreen({ match }) {
             roomid: match.params.roomid,
           })
         ).data;
-       // var date1=data.currentbookings[0].fromdate
-      //  var date1=data.currentbookings.find({fromdate})
-     //   var date2=new Date (fromdate._i)
+        // var date1=data.currentbookings[0].fromdate
+        //  var date1=data.currentbookings.find({fromdate})
+        //   var date2=new Date (fromdate._i)
         // console.log(data.currentbookings[0].fromdate)
         // console.log(fromdate._i)
         // console.log("2"+date2 )
         // console.log(data.currentbookings);
 
-    //  if(data.currentbookings){
-    //   data.currentbookings.forEach((x, i) =>{
-    //     // console.log(x)
-    //      //if(x.fromdate=== date2)
-    //     // date_from_user > start_date && date_from_user < end_date
-       
-    //      if(fromdate._i <x.fromdate ||
-          
-          
-    //       todate._i>x.todate){
-    //        console.log("true")
-    //        setAvaial(true);
-    //      }else if(fromdate._i >x.todate && todate._i>x.todate){
-    //        console.log("false")
-    //        setAvaial(true);
-    //      }
-    //    } )
-    //  }
+        //  if(data.currentbookings){
+        //   data.currentbookings.forEach((x, i) =>{
+        //     // console.log(x)
+        //      //if(x.fromdate=== date2)
+        //     // date_from_user > start_date && date_from_user < end_date
+
+        //      if(fromdate._i <x.fromdate ||
+
+        //       todate._i>x.todate){
+        //        console.log("true")
+        //        setAvaial(true);
+        //      }else if(fromdate._i >x.todate && todate._i>x.todate){
+        //        console.log("false")
+        //        setAvaial(true);
+        //      }
+        //    } )
+        //  }
         // $start_date = date_create(fromdate._i);
         // $date_from_user = date_create(todate._i);
         // $end_date = date_create(todate._i);
-        
+
         // $interval1 = date_diff($start_date, $date_from_user);
         // $interval2 = date_diff($end_date, $date_from_user);
-        
+
         // if($interval1->invert == 0){
         //   if($interval2->invert == 1){
-        
+
         //      // if it lies between start date and end date execute this code
-        
+
         //   }
         // }
 
-
-
-
-
-        setMaxCout(data.maxcount)
+        setMaxCout(data.maxcount);
         setRoom(data);
         // if(data.currentbookings){
         //   setBookings(data.currentbookings)
         //   console.log(bookings)
         // }
-      
-      
-
       } catch (error) {
         console.log(error);
         setError(error);
@@ -115,7 +107,7 @@ function Bookingscreen({ match }) {
       totalAmount,
       totaldays: totalDays,
       token,
-      maxcount
+      maxcount,
     };
 
     try {
@@ -146,7 +138,6 @@ function Bookingscreen({ match }) {
     //   });
     // });
   };
- 
 
   return (
     <div className="m-5">
@@ -182,30 +173,25 @@ function Bookingscreen({ match }) {
                 <p>Total Amount : {totalAmount}</p>
               </b>
             </div>
-        <div>
+            <div></div>
+            {maxcount === 0 ? (
+              <ul>
+                <div>Booking Full </div>
 
-    
-        </div>
-            {maxcount === 0  ? (
-           <ul>
-            <div>Booking Full </div>
-      
-           <div>Please Choose Another Room</div>
-         </ul>
-     
-
-            ) :(  <div style={{ float: "right" }}>
-              <StripeCheckout
-                amount={totalAmount * 100}
-                currency="USD"
-                token={onToken}
-                stripeKey="pk_test_51LL6J6SD2pPj4zIil25zSBMX0sRU8ioUCji8FGDZs4DYmWnVsfzNjB3aB5V7Ff54njSZn6JFWsXki57AIYbW6rEY00XBYRQlwk"
-              >
-                <button className="btn btn-primary">Pay Now</button>
-              </StripeCheckout>
-            </div>)}
-
-          
+                <div>Please Choose Another Room</div>
+              </ul>
+            ) : (
+              <div style={{ float: "right" }}>
+                <StripeCheckout
+                  amount={totalAmount * 100}
+                  currency="USD"
+                  token={onToken}
+                  stripeKey="pk_test_51LL6J6SD2pPj4zIil25zSBMX0sRU8ioUCji8FGDZs4DYmWnVsfzNjB3aB5V7Ff54njSZn6JFWsXki57AIYbW6rEY00XBYRQlwk"
+                >
+                  <button className="btn btn-primary">Pay Now</button>
+                </StripeCheckout>
+              </div>
+            )}
           </div>
         </div>
       )}
