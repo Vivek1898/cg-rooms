@@ -3,7 +3,7 @@ import Image from "./Image";
 const ServicesSection = () => {
   return (
     <div className="services">
-      <h1>Services</h1>
+      <div className="h1">Services</div>
       <div className="section-line"></div>
 
       <div className="services-card">
@@ -15,7 +15,7 @@ const ServicesSection = () => {
         <Image
           image="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/roommates_pb8xjx.jpg"
           name="ROOMMATES"
-          link="https://forms.gle/aLvpjA4F4J9J3nrx9"
+          link="/roommates"
         />
         <Image
           image="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/food_a5kbyu.jpg"

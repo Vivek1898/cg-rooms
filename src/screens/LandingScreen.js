@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
@@ -9,6 +10,8 @@ AOS.init({
 
 function LandingScreen() {
   return (
+    <>
+    <Navbar />
     <div className="row landing">
       <div className="col-md-12 text-center">
         <h2 data-aos="zoom-in" style={{ color: "white", fontSize: "100px" }}>
@@ -22,6 +25,7 @@ function LandingScreen() {
         </Link>
       </div>
     </div>
+    </>
   );
 }
 

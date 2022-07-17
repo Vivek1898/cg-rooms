@@ -9,47 +9,47 @@ function Navbar() {
   }
 
   const navAction = () => {
-    if (user) {
-      return (
-        <ul className="navbar-nav mr-5">
-          <li class="nav-item">
-            <a className="nav-link" href="/maid">
-              Maid
-            </a>
-          </li>
-          <li class="nav-item">
-            <a className="nav-link" href="/mess">
-              Mess
-            </a>
-          </li>
 
-          <li className="nav-item active">
-            <a className="nav-link" href="/home">
-              Rooms
-            </a>
-          </li>
-          <li className="nav-item active">
-            <a className="nav-link" href="/laundary">
-              Laundary
-            </a>
-          </li>
-          <li className="nav-item active">
-            <a className="nav-link" href="/gym">
-              Gym
-            </a>
-          </li>
-          <li className="nav-item active">
-            <a className="nav-link" href="/bookurpg">
-              Owner
-            </a>
-          </li>
+    return (
+      <ul className="navbar-nav">
+        <li className="nav-item active">
+          <a className="nav-link" href="/home">
+            Rooms
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/roommates">
+            Room mates
+          </a>
+        </li>
+        <li class="nav-item">
+          <a className="nav-link" href="/mess">
+            Mess
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/laundary">
+            Laundary
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/gym">
+            Gym
+          </a>
+        </li>
+        <li class="nav-item">
+          <a className="nav-link" href="/maid">
+            Maid
+          </a>
+        </li>
+        <li className="nav-item active">
+          <a className="nav-link" href="/bookurpg">
+            Owner
+          </a>
+        </li>
 
-          <li className="nav-item active">
-            <a className="nav-link" href="/roomates">
-              Room mates
-            </a>
-          </li>
-
+        {
+          user ? 
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -67,64 +67,24 @@ function Navbar() {
                 Profile
               </a>
 
-              <a className="dropdown-item" href="#" onClick={Logout}>
+              <a className="dropdown-item" href="/" onClick={Logout}>
                 Logout
               </a>
             </div>
+          </div> :
+          <div className="d-flex">
+            <li className="nav-item active">
+              <a className="nav-link" href="/register">
+                Register
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/login">
+                Login
+              </a>
+            </li>
           </div>
-        </ul>
-      );
-    }
-
-    return (
-      <ul className="navbar-nav">
-        <li className="nav-item active">
-          <a className="nav-link" href="/roomates">
-            Room mates
-          </a>
-        </li>
-
-        <li className="nav-item active">
-          <a className="nav-link" href="/bookurpg">
-            Owner
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/home">
-            Rooms
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/laundary">
-            Laundary
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/gym">
-            Gym
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/mess">
-            Mess
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/maid">
-            Maid
-          </a>
-        </li>
-
-        <li className="nav-item active">
-          <a className="nav-link" href="/register">
-            Register
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/login">
-            Login
-          </a>
-        </li>
+        }
       </ul>
     );
   };
@@ -133,7 +93,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg">
         <a className="navbar-brand" href="/">
-          College Grahasthi
+          <img src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/CGLogoWhite_ijatxb.png" alt="logo" className="logo" />
         </a>
 
         {/* <Link to="/maid">Linked Maid</Link> */}

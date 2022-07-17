@@ -5,6 +5,7 @@ import StripeCheckout from "react-stripe-checkout";
 import Swal from "sweetalert2";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import Navbar from "../components/Navbar";
 
 function Bookingscreen({ match }) {
   const [loading, setLoading] = useState(true);
@@ -140,6 +141,8 @@ function Bookingscreen({ match }) {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="m-5">
       {loading ? (
         <Loader></Loader>
@@ -196,6 +199,7 @@ function Bookingscreen({ match }) {
         </div>
       )}
     </div>
+    </>
   );
 }
 

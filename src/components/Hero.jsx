@@ -8,9 +8,14 @@ const Hero = () => {
         <Nav />
 
         <div className="hero-des">
+
           <div className="title">
-            <h1>College Grahasthi</h1>
-            <p>All your accommodation needs in one place.</p>
+            <div className="h1">
+              College Grahasthi
+            </div>
+            <div className="p">
+              All your accommodation needs in one place.
+            </div>
           </div>
 
           <div style={{ width: "50%" }}></div>
@@ -21,7 +26,7 @@ const Hero = () => {
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/checked_xyzbwu.png"
                 alt="check mark"
               />
-              <p>Verified Listings</p>
+              <div>Verified Listings</div>
             </div>
 
             <div className="points">
@@ -29,7 +34,7 @@ const Hero = () => {
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/checked_xyzbwu.png"
                 alt="check mark"
               />
-              <p>Lowest price Guaranteed</p>
+              <div>Lowest price Guaranteed</div>
             </div>
 
             <div className="points">
@@ -37,13 +42,13 @@ const Hero = () => {
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/checked_xyzbwu.png"
                 alt="check mark"
               />
-              <p>Best services</p>
+              <div>Best services</div>
             </div>
           </div>
         </div>
       </div>
       <div className="banner">
-        <p>Resister your PG Now</p>
+        <div className="p">Resister your PG Now</div>
 
         <div>
           <Button value="Book Now !!" link="/bookurpg" bgColor="white" />

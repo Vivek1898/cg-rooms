@@ -16,6 +16,7 @@ import AdminGymScreen from "./AdminGymScreen";
 import AdminGymBookingScreen from "./AdminGymBookingScreen";
 import AdminLaundaryScreen from "./AdminLaundaryScreen";
 import AdminAddLaundaryScreec from "./AdminAddLaundaryScreec";
+import Navbar from "../components/Navbar";
 
 const { TabPane } = Tabs;
 function callback(key) {
@@ -31,6 +32,8 @@ function AdminScreen() {
   }, []);
 
   return (
+    <>
+    <Navbar />
     <div className="ml-3 mt-3 mr-3 bs">
       <h1 className="text-center">Admin Panel</h1>
       <Tabs defaultActiveKey="1" onChange={callback}>
@@ -80,6 +83,7 @@ function AdminScreen() {
         </TabPane>
       </Tabs>
     </div>
+    </>
   );
 }
 

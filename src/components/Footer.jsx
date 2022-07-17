@@ -2,15 +2,15 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="company-des">
-        <h1>College Grahasthi</h1>
-        <p className="copyright-title">© 2022 All Rights Reserved.</p>
-        <p className="copyright-info">
+        <div className="h1">College Grahasthi</div>
+        <div className="copyright-title">© 2022 All Rights Reserved.</div>
+        <div className="copyright-info">
           The company name, website, and information used on this website are
           owned by Collège Grahasthi. All of these are copyright protected, and
           Collège Grahasthi owners are the exclusive proprietors of the
           copyrights. The usage aims to advertise, identify, and search. No
           involvement or endorsement is suggested.
-        </p>
+        </div>
 
         <div className="stars">
           <img
@@ -38,7 +38,7 @@ const Footer = () => {
 
       <div className="footer-des">
         <div className="footer-des-card">
-          <h1>Company</h1>
+          <div className="h1">Company</div>
           <div className="footer-des-card-info">
             <a href="/comingsoon">About</a>
             <a href="/comingsoon">Careers</a>
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-des-card">
-          <h1>Get Help</h1>
+          <div className="h1">Get Help</div>
           <div className="footer-des-card-info">
             <a href="/comingsoon">How It Works</a>
             <a href="/comingsoon">FAQs</a>
@@ -59,14 +59,14 @@ const Footer = () => {
         </div>
 
         <div className="contact">
-          <h1>Contact Us</h1>
+          <div className="h1">Contact Us</div>
           <div className="direct-contact-div">
             <a href="tel:7850037958" className="direct-contact">
               <img
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/call_qwfllq.png"
                 alt="call"
               />
-              <p>+91 7850037958</p>
+              <div>+91 7850037958</div>
             </a>
 
             <a href="tel:7091045216" className="direct-contact">
@@ -74,7 +74,7 @@ const Footer = () => {
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/call_qwfllq.png"
                 alt="call"
               />
-              <p>+91 7091045216</p>
+              <div>+91 7091045216</div>
             </a>
 
             <a
@@ -87,7 +87,7 @@ const Footer = () => {
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875010/CollegeGrahasthiWeb/mail_d62gqa.png"
                 alt="mail"
               />
-              <p>collegegrahasthi@gmail.com</p>
+              <div>collegegrahasthi@gmail.com</div>
             </a>
           </div>
 
@@ -102,7 +102,7 @@ const Footer = () => {
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875010/CollegeGrahasthiWeb/instagram_tidxgg.png"
                 alt="mail"
               />
-              <p>Instagram</p>
+              <div>Instagram</div>
             </a>
 
             <a
@@ -115,7 +115,7 @@ const Footer = () => {
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/linkedin_bqpdy1.png"
                 alt="mail"
               />
-              <p>LinkedIn</p>
+              <div>LinkedIn</div>
             </a>
           </div>
         </div>

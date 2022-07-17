@@ -1,6 +1,4 @@
 import { BrowserRouter, Route } from "react-router-dom";
-
-import Navbar from "./components/Navbar";
 import Homescreen from "./screens/Homescreen";
 import Bookingscreen from "./screens/Bookingscreen";
 import MessBookingScreen from "./screens/MessBookingScreen";
@@ -15,16 +13,18 @@ import MessScreen from "./screens/MessScreen";
 import GymScreen from "./screens/GymScreen";
 import Home1 from "./screens/Home";
 import Owner from "./screens/Owner";
-import FindRoomates from "./screens/FindRoomates";
+import Findroommates from "./screens/FindRoommates";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LaundaryScreen from "./screens/LaundaryScreen";
+import ComingSoon from "./screens/ComingSoon";
+
 
 function App() {
   return (
     <div className="App">
       <ToastContainer position="top-center" />
-      <Navbar />
+
       <BrowserRouter>
         <Route path="/LandingScreen" exact component={LandingScreen} />
         <Route path="/home" exact component={Homescreen} />
@@ -55,7 +55,8 @@ function App() {
         <Route path="/gym" exact component={GymScreen} />
         <Route path="/laundary" exact component={LaundaryScreen} />
         <Route path="/bookurpg" exact component={Owner} />
-        <Route path="/roomates" exact component={FindRoomates} />
+        <Route path="/roommates" exact component={Findroommates} />
+        <Route path="/comingsoon" exact component={ComingSoon} />
       </BrowserRouter>
     </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './owner-form.css'
+import './login-form.css'
 import App from './App';
 
 ReactDOM.render(

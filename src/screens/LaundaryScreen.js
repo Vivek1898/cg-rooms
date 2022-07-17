@@ -4,6 +4,7 @@ import { Table, Tag, Space } from "antd";
 
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import Navbar from "../components/Navbar";
 
 function AdminMaidScreen() {
   const [maids, setMaid] = useState([]);
@@ -39,17 +40,19 @@ function AdminMaidScreen() {
   }, []);
 
   return (
-    // <div className="row">
-    //   {loading ? (
-    //     <Loader></Loader>
-    //   ) : error.length > 0 ? (
-    //     <Error msg={error}></Error>
-    //   ) : (
-    //     <div className="col-md-12">
-    //       <Table columns={columns} dataSource={maids} />
-    //     </div>
-    //   )}
-    // </div>
+    <>
+    <Navbar />
+    {/* <div className="row">
+      {loading ? (
+        <Loader></Loader>
+      ) : error.length > 0 ? (
+        <Error msg={error}></Error>
+      ) : (
+        <div className="col-md-12">
+          <Table columns={columns} dataSource={maids} />
+        </div>
+      )}
+    </div> */}
 
     <div className="row justify-content-center mt-5">
       {loading ? (
@@ -91,6 +94,7 @@ function AdminMaidScreen() {
         })
       )}
     </div>
+    </>
   );
 }
 

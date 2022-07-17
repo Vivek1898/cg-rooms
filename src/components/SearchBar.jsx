@@ -1,5 +1,3 @@
-import search from "../images/search.png";
-
 const SearchBar = () => {
   return (
     <div className="search-bar">

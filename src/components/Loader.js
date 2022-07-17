@@ -5,9 +5,9 @@ function Loader() {
   let [loading] = useState(true);
 
   return (
-    <div style={{ marginTop: "150px" }}>
+    <div>
       <div className="sweet-loading text-center">
-        <PropagateLoader color="#000" loading={loading} css="" size={25} />
+        <PropagateLoader color="#003f91" loading={loading} css="" size={25} />
       </div>
     </div>
   );

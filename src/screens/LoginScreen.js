@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import Navbar from "../components/Navbar";
 
 function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -31,19 +32,21 @@ function LoginScreen() {
     setLoading(false);
   }
   return (
-    <div>
+    <>
+    <Navbar />
+    <div className="login-main">
       {loading && <Loader></Loader>}
 
-      <div className="row justify-content-center mt-5">
-        <div className="col-md-5 mt-5">
+      <div className="row justify-content-center m-0">
+        <div className="col-md-5">
           {error.length > 0 && <Error msg={error}></Error>}
           <div className="bs">
-            <h2>Login</h2>
+            <h2 style={{color: "rgb(225, 225, 225)"}}>Login</h2>
 
             <input
-              type="text"
+              type="email"
               className="form-control"
-              placeholder="email"
+              placeholder="Email"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -52,7 +55,7 @@ function LoginScreen() {
             <input
               type="password"
               className="form-control"
-              placeholder="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -69,6 +72,7 @@ function LoginScreen() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

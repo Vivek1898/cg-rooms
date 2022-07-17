@@ -10,6 +10,7 @@ import Error from "../components/Error";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import Navbar from "../components/Navbar";
 // ..
 AOS.init({
   duration: 1000,
@@ -109,8 +110,10 @@ function Homescreen() {
   }
 
   return (
+    <>
+    <Navbar />
     <div className="container">
-      <div className="row mt-5 bs">
+      <div className="row mt-5 bs align-items-center" style={{backgroundColor: "rgb(0, 63, 145)"}}>
         <div className="col-md-3">
           <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
         </div>
@@ -158,6 +161,7 @@ function Homescreen() {
         )}
       </div>
     </div>
+    </>
   );
 }
 

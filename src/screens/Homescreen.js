@@ -7,6 +7,7 @@ import moment from "moment";
 import Room from "../components/Room";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import Navbar from "../components/Navbar";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
@@ -109,8 +110,10 @@ function Homescreen() {
   }
 
   return (
+    <>
+    <Navbar />
     <div className="container">
-      <div className="row mt-5 bs">
+      <div className="row mt-5 bs align-items-center" style={{backgroundColor: "rgb(0, 63, 145)"}}>
         <div className="col-md-3">
           <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
         </div>
@@ -158,6 +161,7 @@ function Homescreen() {
         )}
       </div>
     </div>
+    </>
   );
 }
 

@@ -3,9 +3,9 @@ import { Tabs } from "antd";
 import { Tag } from "antd";
 
 import MyBookingScreen from "./MyBookingScreen";
-
 import MyMessBookingScreen from "./MyMessBookingScreen";
 import MyGymBookingScreen from "./MyGymBookingScreen";
+import Navbar from "../components/Navbar";
 
 const { TabPane } = Tabs;
 
@@ -23,6 +23,8 @@ function ProfileScreen() {
   }
 
   return (
+    <>
+    <Navbar />
     <div className="ml-3 mt-3">
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="Profile" key="1">
@@ -55,6 +57,7 @@ function ProfileScreen() {
         </TabPane>
       </Tabs>
     </div>
+    </>
   );
 }
 
