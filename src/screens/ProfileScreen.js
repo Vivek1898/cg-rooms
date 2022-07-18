@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Tabs } from "antd";
 import { Tag } from "antd";
 
 import MyBookingScreen from "./MyBookingScreen";
-
 import MyMessBookingScreen from "./MyMessBookingScreen";
 import MyGymBookingScreen from "./MyGymBookingScreen";
+import Navbar from "../components/Navbar";
 
 const { TabPane } = Tabs;
 
@@ -23,6 +23,8 @@ function ProfileScreen() {
   }
 
   return (
+    <>
+    <Navbar />
     <div className="ml-3 mt-3">
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="Profile" key="1">
@@ -48,14 +50,14 @@ function ProfileScreen() {
           <MyBookingScreen></MyBookingScreen>
         </TabPane>
         <TabPane tab="Mess Booking" key="3">
-        <MyMessBookingScreen></MyMessBookingScreen>
+          <MyMessBookingScreen></MyMessBookingScreen>
         </TabPane>
         <TabPane tab="Gym Booking" key="4">
-        <MyGymBookingScreen></MyGymBookingScreen>
+          <MyGymBookingScreen></MyGymBookingScreen>
         </TabPane>
-        
       </Tabs>
     </div>
+    </>
   );
 }
 

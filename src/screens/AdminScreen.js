@@ -5,18 +5,18 @@ import AdminBookingScreen from "./AdminBookingScreen";
 import AdminRoomScreen from "./AdminRoomScreen";
 import AdminUserScreen from "./AdminUserScreen";
 import AdminAddRoomScreen from "./AdminAddRoomScreen";
-import AdminAddMaidScreen from "./AdminAddMaidScreen"
-import AdminMaidScreen from "./AdminMaidScreen"
-import AdminAddMessScreen from "./AdminAddMessScreen"
-import AdminMessScreen from "./AdminMessScreen"
-import AdminMessBookingScreen from "./AdminMessBookingScreen"
+import AdminAddMaidScreen from "./AdminAddMaidScreen";
+import AdminMaidScreen from "./AdminMaidScreen";
+import AdminAddMessScreen from "./AdminAddMessScreen";
+import AdminMessScreen from "./AdminMessScreen";
+import AdminMessBookingScreen from "./AdminMessBookingScreen";
 
-import AdminAddGymScreen from "./AdminAddGymScreen"
-import AdminGymScreen from "./AdminGymScreen"
-import AdminGymBookingScreen from "./AdminGymBookingScreen"
-import AdminLaundaryScreen from "./AdminLaundaryScreen"
-import AdminAddLaundaryScreec from "./AdminAddLaundaryScreec"
-
+import AdminAddGymScreen from "./AdminAddGymScreen";
+import AdminGymScreen from "./AdminGymScreen";
+import AdminGymBookingScreen from "./AdminGymBookingScreen";
+import AdminLaundaryScreen from "./AdminLaundaryScreen";
+import AdminAddLaundaryScreec from "./AdminAddLaundaryScreec";
+import Navbar from "../components/Navbar";
 
 const { TabPane } = Tabs;
 function callback(key) {
@@ -32,6 +32,8 @@ function AdminScreen() {
   }, []);
 
   return (
+    <>
+    <Navbar />
     <div className="ml-3 mt-3 mr-3 bs">
       <h1 className="text-center">Admin Panel</h1>
       <Tabs defaultActiveKey="1" onChange={callback}>
@@ -63,7 +65,6 @@ function AdminScreen() {
           <AdminMessBookingScreen></AdminMessBookingScreen>
         </TabPane>
 
-
         <TabPane tab=" Add Gym" key="10">
           <AdminAddGymScreen></AdminAddGymScreen>
         </TabPane>
@@ -74,18 +75,15 @@ function AdminScreen() {
           <AdminGymBookingScreen></AdminGymBookingScreen>
         </TabPane>
 
-
         <TabPane tab="Laundary" key="13">
           <AdminLaundaryScreen></AdminLaundaryScreen>
         </TabPane>
         <TabPane tab="Laundary Booking" key="14">
           <AdminAddLaundaryScreec></AdminAddLaundaryScreec>
         </TabPane>
-
-
-
       </Tabs>
     </div>
+    </>
   );
 }
 

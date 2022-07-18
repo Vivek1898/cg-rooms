@@ -9,6 +9,7 @@
     "antd": "^4.16.11",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
+    "dotenv": "^16.0.1",
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -45,5 +46,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": ""
+  "proxy": "https://young-plateau-64575.herokuapp.com/"
 }

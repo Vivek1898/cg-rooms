@@ -1,15 +1,19 @@
 const Button = ({ value, link, bgColor }) => {
-  var text = '';
+  var text = "";
 
   if (bgColor === "white") {
-    text = "#003f91"
+    text = "#003f91";
   } else {
-    text = "white"
+    text = "white";
   }
-  
+
   return (
-    <a href={link} className='button' style={{backgroundColor: bgColor, color: text}}>
-      { value }
+    <a
+      href={link}
+      className="button"
+      style={{ backgroundColor: bgColor, color: text }}
+    >
+      {value}
     </a>
   );
 };

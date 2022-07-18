@@ -20,8 +20,6 @@ function AdminMaidScreen() {
     { title: "email", dataIndex: "email", key: "email" },
     { title: "mobile", dataIndex: "mobile", key: "mobile" },
     { title: "price", dataIndex: "price", key: "price" },
-
-   
   ];
 
   async function fetchMyData() {

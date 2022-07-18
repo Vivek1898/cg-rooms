@@ -1,19 +1,21 @@
-// Import required images.
-import logo from '../images/CGLogoWhite.png';
-
 const Nav = () => {
-
   return (
-    <div className='nav'>
+    <div style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "0 6rem",
+        fontSize: "1.25rem",
+        lineHeight: "1.75rem"
+      }}>
       <a href="/">
-        <img src="https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886868/fianl/CGLogoBlack_wfuwso.png" alt="logo" className='hero-logo' />
+        <img
+          src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/CGLogoWhite_ijatxb.png"
+          alt="logo"
+          className="hero-logo"
+        />
       </a>
-
-      {/* <div className='login'>
-        <a href='/comingsoon'>
-          LogIn/SignUp
-        </a>
-      </div> */}
     </div>
   );
 };

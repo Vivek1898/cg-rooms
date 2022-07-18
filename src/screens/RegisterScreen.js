@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
+import Navbar from "../components/Navbar";
+
 
 function RegisterScreen() {
   const [name, setName] = useState("");
@@ -14,6 +16,7 @@ function RegisterScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [submit, setSubmit] = useState(false);
 
   async function register() {
     if (password === cpassword) {
@@ -45,56 +48,69 @@ function RegisterScreen() {
     }
   }
 
+  const handleSubmit = () => {
+    if (email && password && cpassword ) {
+      setSubmit(true);
+    }
+  }
+
+
   return (
-    <div>
+    <>
+    <Navbar />
+    <div className="login-main">
       {loading && <Loader></Loader>}
       {error.length > 0 && <Error msg={error}></Error>}
 
-      <div className="row justify-content-center mt-5">
-        <div className="col-md-5 mt-5">
+      <div className="row justify-content-center m-0">
+        <div className="col-md-5">
           {success.length > 0 && <Success msg={success}></Success>}
           <div className="bs">
-            <h2>Register</h2>
+            <h2 style={{color: "rgb(225, 225, 225)"}}>Register</h2>
             <input
               type="text"
               className="form-control"
-              placeholder="name"
+              placeholder="Name"
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
               }}
+              required
             />
             <input
-              type="text"
+              type="email"
               className="form-control"
-              placeholder="email"
+              placeholder="Email"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              required
             />
             <input
-              type="text"
+              type="password"
               className="form-control"
-              placeholder="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
             <input
-              type="text"
+              type="password"
               className="form-control"
-              placeholder="confirm password"
+              placeholder="Confirm Password"
               value={cpassword}
               onChange={(e) => {
                 setCpassword(e.target.value);
+                handleSubmit();
               }}
+              required
             />
             {loading ? (
               <div>Registering... Please Wait...</div>
             ) : (
-              <button className="btn btn-primary mt-3" onClick={register}>
+              <button className="btn btn-primary mt-3" onClick={register} disabled={!submit}>
                 Register
               </button>
             )}
@@ -102,6 +118,7 @@ function RegisterScreen() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import Navbar from "../components/Navbar";
 
 const ComingSoon = () => {
   return (
-    <div className='coming-soon'>
-      Coming Soon
-    </div>
-  )
-}
+    <>
+      <Navbar />
+      <div className="coming-soon">Coming Soon</div>
+    </>
+  );
+};
 
 export default ComingSoon;

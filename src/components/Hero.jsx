@@ -1,55 +1,59 @@
-import Nav from './Nav';
-import SearchBar from './SearchBar';
-import Button from './Button';
-import checkMark from '../images/checked.png';
+import Nav from "./Nav";
+import Button from "./Button";
 
 const Hero = () => {
-
   return (
     <div>
-      <div className='hero'>
+      <div className="hero">
         <Nav />
 
-        <div className='hero-des'>
+        <div className="hero-des">
 
-          <div className='title'>
-            <h1>College Grahasthi</h1>
-            <p>All your accommodation needs in one place.</p>
+          <div className="title">
+            <div className="h1">
+              College Grahasthi
+            </div>
+            <div className="p">
+              All your accommodation needs in one place.
+            </div>
           </div>
 
-          <div style={{width: "50%"}}>
-    
+          <div style={{ width: "50%" }}></div>
+
+          <div className="hero-points">
+            <div className="points">
+              <img
+                src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/checked_xyzbwu.png"
+                alt="check mark"
+              />
+              <div>Verified Listings</div>
+            </div>
+
+            <div className="points">
+              <img
+                src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/checked_xyzbwu.png"
+                alt="check mark"
+              />
+              <div>Lowest price Guaranteed</div>
+            </div>
+
+            <div className="points">
+              <img
+                src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/checked_xyzbwu.png"
+                alt="check mark"
+              />
+              <div>Best services</div>
+            </div>
           </div>
-
-          <div className='hero-points'>
-
-            <div className='points'>
-              <img src="https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886866/fianl/checked_auufzp.png" alt="check mark" />
-              <p>Verified Listings</p>
-            </div>
-
-            <div className='points'>
-              <img src="https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886866/fianl/checked_auufzp.png" alt="check mark" />
-              <p>Lowest price Guaranteed</p>
-            </div>
-
-            <div className='points'>
-              <img src="https://res.cloudinary.com/dl2mkfkqh/image/upload/v1657886866/fianl/checked_auufzp.png" alt="check mark" />
-              <p>Best services</p>
-            </div>
-
-          </div>
-
         </div>
       </div>
-      <div className='banner'>
-        <p>Resister your PG Now</p>
-          
+      <div className="banner">
+        <div className="p">Resister your PG Now</div>
+
         <div>
           <Button value="Book Now !!" link="/bookurpg" bgColor="white" />
         </div>
       </div>
-     
     </div>
   );
 };
