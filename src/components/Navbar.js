@@ -1,11 +1,8 @@
 import React from "react";
-<<<<<<< HEAD
 import{ useState, useEffect } from "react";
 import { render } from 'react-dom'
 import {BrowserRouter as Router, Route, Link ,useHistory} from 'react-router-dom'
 import Mess from "../screens/MessScreen"
-=======
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 
 function Navbar() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -22,7 +19,6 @@ function Navbar() {
   // }
 
   const navAction = () => {
-<<<<<<< HEAD
     if (user) {
       return (
         <ul className="navbar-nav mr-5">
@@ -66,49 +62,9 @@ function Navbar() {
           </Link>
           </li>
 
-=======
 
-    return (
-      <ul className="navbar-nav">
-        <li className="nav-item active">
-          <a className="nav-link" href="/home">
-            Rooms
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/roommates">
-            Room mates
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/mess">
-            Mess
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/laundary">
-            Laundary
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/gym">
-            Gym
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/maid">
-            Maid
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="/bookurpg">
-            Owner
-          </a>
-        </li>
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
-
-        {
-          user ? 
+         
+          
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -118,7 +74,7 @@ function Navbar() {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i className="fas fa-user mr-2"></i>
+              <i class="fas fa-user mr-2"></i>
               {user.name}
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -126,28 +82,11 @@ function Navbar() {
                 Profile
               </Link>
 
-<<<<<<< HEAD
               <Link className="dropdown-item" to="#" onClick={Logout}>
-=======
-              <a className="dropdown-item" href="/" onClick={Logout}>
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
                 Logout
               </Link>
             </div>
-          </div> :
-          <div className="d-flex">
-            <li className="nav-item active">
-              <a className="nav-link" href="/register">
-                Register
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/login">
-                Login
-              </a>
-            </li>
           </div>
-<<<<<<< HEAD
         </ul>
       );
     }
@@ -203,31 +142,20 @@ function Navbar() {
             Login
           </Link>
         </li>
-=======
-        }
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
       </ul>
     );
   };
 
   return (
-    <div>
+ 
+ <div>
       <nav className="navbar navbar-expand-lg">
-<<<<<<< HEAD
         <Link className="navbar-brand" to="/">
         College Grahasthi
         </Link>
        
           {/* <Link to="/maid">Linked Maid</Link> */}
          
-=======
-        <a className="navbar-brand" href="/">
-          <img src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/CGLogoWhite_ijatxb.png" alt="logo" className="logo" />
-        </a>
-
-        {/* <Link to="/maid">Linked Maid</Link> */}
-
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
         <button
           className="navbar-toggler"
           type="button"
@@ -238,16 +166,22 @@ function Navbar() {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon">
-            <i className="fas fa-bars" style={{ color: "white" }}></i>
+            <i class="fas fa-bars" style={{ color: "white" }}></i>
           </span>
         </button>
+    
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        
           {navAction()}
         </div>
+       
       </nav>
       {/* <Route path='/mess' component={Mess} /> */}
     </div>
+    
+  
+   
   );
 }
 

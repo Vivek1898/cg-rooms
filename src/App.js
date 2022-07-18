@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import { BrowserRouter as Router, Route, Link ,Switch} from "react-router-dom";
 
-=======
-import { BrowserRouter, Route } from "react-router-dom";
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 import Homescreen from "./screens/Homescreen";
 import Bookingscreen from "./screens/Bookingscreen";
 import MessBookingScreen from "./screens/MessBookingScreen";
@@ -23,7 +19,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LaundaryScreen from "./screens/LaundaryScreen";
 import ComingSoon from "./screens/ComingSoon";
-<<<<<<< HEAD
 import ForgotPassword from "./screens/ForgotPassword"
 
 function App() {
@@ -32,16 +27,6 @@ function App() {
       <ToastContainer position="top-center" />
 
       <Switch>
-=======
-
-
-function App() {
-  return (
-    <div className="App">
-      <ToastContainer position="top-center" />
-
-      <BrowserRouter>
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
         <Route path="/LandingScreen" exact component={LandingScreen} />
         <Route path="/home" exact component={Homescreen} />
         <Route
@@ -71,18 +56,11 @@ function App() {
         <Route path="/gym" exact component={GymScreen} />
         <Route path="/laundary" exact component={LaundaryScreen} />
         <Route path="/bookurpg" exact component={Owner} />
-<<<<<<< HEAD
         <Route path="/roomates" exact component={Findroommates} />
         <Route path="/comingsoon" exact component={ComingSoon} />
         <Route path="/forgot-password" exact component={ForgotPassword} />
       </Switch>
     </Router>
-=======
-        <Route path="/roommates" exact component={Findroommates} />
-        <Route path="/comingsoon" exact component={ComingSoon} />
-      </BrowserRouter>
-    </div>
->>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
   );
 }
 
