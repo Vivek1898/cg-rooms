@@ -66,8 +66,8 @@ function AdminMaidScreen() {
                 <div className="card-body">
                   <h5 className="card-title">Maid</h5>
                   <p className="card-text">Name : {x.name}</p>
-                  <p className="card-text">Email : {x.email}</p>
-                  <p className="card-text">Mobile : {x.mobile}</p>
+                  {/* <p className="card-text">Email : {x.email}</p>
+                  <p className="card-text">Mobile : {x.mobile}</p> */}
                   <p className="card-text">Price : {x.price}</p>
                   <a href="#" className="btn btn-primary">
                     Book Now

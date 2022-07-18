@@ -162,8 +162,8 @@ function AdminAddRoomScreen() {
               ]}
             >
               <Select placeholder="Select a room type" allowClear>
-                <Option value="indian">INDIAN</Option>
-                <Option value="chinese">CHINESE</Option>
+              <option value="VEG">VEG</option>
+              <option value="NON-VEG">NON-VEG</option>
               </Select>
             </Form.Item>
             <Form.Item {...tailLayout}>

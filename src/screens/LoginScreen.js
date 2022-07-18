@@ -107,7 +107,7 @@ function LoginScreen() {
             {loading ? (
               <div>Login...Please Wait...</div>
             ) : (
-              <button className="btn btn-primary mt-3" onClick={Login} disabled={!submit} >
+              <button className="btn btn-primary mt-3" onClick={Login} disabled={!email || !password} >
                 Login
               </button>
             )}

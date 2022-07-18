@@ -162,8 +162,9 @@ function AdminAddRoomScreen() {
               ]}
             >
               <Select placeholder="Select a room type" allowClear>
-                <Option value="delux">Delux</Option>
-                <Option value="non-delux">Non-Delux</Option>
+              <option value="1-BHK">1-BHK</option>
+            <option value="2-BHK">2-BHK</option>
+            <option value="3-BHK">3-BHK</option>
               </Select>
             </Form.Item>
             <Form.Item {...tailLayout}>

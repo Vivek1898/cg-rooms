@@ -16,6 +16,12 @@ const Nav = () => {
           className="hero-logo"
         />
       </a>
+
+         {/* <div className='login'>
+        <a href='/comingsoon'>
+          LogIn/SignUp
+        </a>
+      </div> */}
     </div>
   );
 };

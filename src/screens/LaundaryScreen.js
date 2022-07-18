@@ -17,8 +17,8 @@ function AdminMaidScreen() {
       dataIndex: "name",
       key: "name",
     },
-    { title: "Email", dataIndex: "email", key: "email" },
-    { title: "Mobile", dataIndex: "mobile", key: "mobile" },
+    // { title: "Email", dataIndex: "email", key: "email" },
+    // { title: "Mobile", dataIndex: "mobile", key: "mobile" },
     { title: "Price", dataIndex: "price", key: "price" },
   ];
 
@@ -76,8 +76,8 @@ function AdminMaidScreen() {
                   <h5 className="card-title">Laundary</h5>
                   <p className="card-text">Name : {x.name}</p>
                   <p className="card-text">Price Per Day : {x.rentperday}</p>
-                  <p className="card-text">Mobile : {x.phonenumber}</p>
-                  <p className="card-text">address : {x.address}</p>
+                  {/* <p className="card-text">Mobile : {x.phonenumber}</p>
+                  <p className="card-text">address : {x.address}</p> */}
                   <p className="card-text">Description : {x.description}</p>
                   <a href="#" className="btn btn-primary">
                     Book Now

@@ -10,13 +10,14 @@ function Gym({ room, fromDate, toDate }) {
 
   return (
     <div className="row bs">
+      <h1>Select Date for bookings</h1>
       <div className="col-md-4">
         <img src={room.imageurls[0]} className="smallimg" alt="" />
       </div>
       <div className="col-md-7">
         <h1>{room.name}</h1>
         <b>
-          <p>Max Count : {room.maxcount}</p>
+          <p>Availability : {room.maxcount}</p>
           <p>Phone Number : {room.phonenumber}</p>
           <p>Type : {room.type}</p>
         </b>

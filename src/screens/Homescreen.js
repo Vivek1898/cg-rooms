@@ -139,11 +139,13 @@ function Homescreen() {
             }}
           >
             <option value="all">All</option>
-            <option value="delux">Delux</option>
-            <option value="non-delux">Non-Delux</option>
+            <option value="1-BHK">1-BHK</option>
+            <option value="2-BHK">2-BHK</option>
+            <option value="3-BHK">3-BHK</option>
           </select>
         </div>
       </div>
+      <h1>   Select Date for bookings</h1>
 
       <div className="row justify-content-center mt-5">
         {loading ? (

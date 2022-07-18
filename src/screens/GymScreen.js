@@ -139,8 +139,7 @@ function Homescreen() {
             }}
           >
             <option value="all">All</option>
-            <option value="indian">INDIAN</option>
-            <option value="chinese">CHINESE</option>
+            <option value="UniSex">UniSex</option>
           </select>
         </div>
       </div>
