@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 import React, { useState,useEffect } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 import axios from "axios";
 
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
 import Navbar from "../components/Navbar";
+<<<<<<< HEAD
 import { useHistory } from "react-router-dom";
+=======
+
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 
 function RegisterScreen() {
   const [name, setName] = useState("");
@@ -17,11 +25,14 @@ function RegisterScreen() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [submit, setSubmit] = useState(false);
+<<<<<<< HEAD
   const user = JSON.parse(localStorage.getItem("currentUser"));
   const history = useHistory();
   useEffect(() => {
     if(user!== null) history.push("home");
    }, [user])
+=======
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 
   async function register() {
     if (password === cpassword) {

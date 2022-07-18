@@ -10,7 +10,10 @@
     "aos": "^2.3.4",
     "axios": "^0.21.1",
     "dotenv": "^16.0.1",
+<<<<<<< HEAD
     "firebase": "^7.19.0",
+=======
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -47,5 +50,9 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "proxy": "http://localhost:5000/"
+=======
+  "proxy": "https://young-plateau-64575.herokuapp.com/"
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 }

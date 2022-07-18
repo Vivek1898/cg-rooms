@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 import React, { useState,useEffect } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 import axios from "axios";
 import { auth, googleAuthProvider,FacebookAuthProvider } from ".././firebase";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Navbar from "../components/Navbar";
+<<<<<<< HEAD
 import { Button } from "antd";
 import { MailOutlined, GoogleOutlined } from "@ant-design/icons";
 import {BrowserRouter as Router, Route, Link ,useHistory} from 'react-router-dom'
+=======
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 
 function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -15,7 +22,10 @@ function LoginScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [submit, setSubmit] = useState(false);
+<<<<<<< HEAD
   const user = JSON.parse(localStorage.getItem("currentUser"));
+=======
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
 
   useEffect(() => {
     if(user!== null) history.push("home");
@@ -45,6 +55,7 @@ function LoginScreen() {
     }
   }
 
+<<<<<<< HEAD
 
   
   const googleLogin = async () => {
@@ -72,6 +83,8 @@ function LoginScreen() {
 
 
 
+=======
+>>>>>>> 123d2120da28f5664ede2e51a689a62fa903644f
   return (
     <>
     <Navbar />
