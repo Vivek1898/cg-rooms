@@ -19,7 +19,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LaundaryScreen from "./screens/LaundaryScreen";
 import ComingSoon from "./screens/ComingSoon";
-import ForgotPassword from "./screens/ForgotPassword"
+import ForgotPassword from "./screens/ForgotPassword";
+import NotFound from "./screens/ComingSoon";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         <Route path="/roomates" exact component={Findroommates} />
         <Route path="/comingsoon" exact component={ComingSoon} />
         <Route path="/forgot-password" exact component={ForgotPassword} />
+        <Route  component={NotFound} />
       </Switch>
     </Router>
   );

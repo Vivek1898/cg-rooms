@@ -18,7 +18,7 @@ function Gym({ room, fromDate, toDate }) {
         <h1>{room.name}</h1>
         <b>
           <p>Availability : {room.maxcount}</p>
-          <p>Phone Number : {room.phonenumber}</p>
+          <p>Phone Number : +91 7850037958</p>
           <p>Type : {room.type}</p>
         </b>
 

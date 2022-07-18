@@ -15,7 +15,7 @@ const ServicesSection = () => {
         <Image
           image="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/roommates_pb8xjx.jpg"
           name="ROOMMATES"
-          link="/roommates"
+          link="/roomates"
         />
         <Image
           image="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875011/CollegeGrahasthiWeb/food_a5kbyu.jpg"

@@ -6,7 +6,9 @@ import Swal from "sweetalert2";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Navbar from "../components/Navbar";
+import {useHistory} from 'react-router-dom'
 
+import { toast } from "react-toastify";
 function GymBookingscreen({ match }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -17,11 +19,12 @@ function GymBookingscreen({ match }) {
   const messid = match.params.gymid;
   const fromdate = moment(match.params.fromdate, "DD-MM-YYYY");
   const todate = moment(match.params.todate, "DD-MM-YYYY");
-
+  const history = useHistory();
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
-      window.location.href = "/login";
+      history.push("/login");
+
     }
     async function fetchMyAPI() {
       try {
@@ -74,7 +77,8 @@ function GymBookingscreen({ match }) {
         "Your Gym Booked Successfully",
         "success"
       ).then((result) => {
-        window.location.href = "/home";
+        history.push("/profile");
+        toast.success("Check your bookings")
       });
     } catch (error) {
       setError(error);
@@ -134,7 +138,7 @@ function GymBookingscreen({ match }) {
             <div style={{ float: "right" }}>
               <StripeCheckout
                 amount={totalAmount * 100}
-                currency="USD"
+                currency="INR"
                 token={onToken}
                 stripeKey="pk_test_51LL6J6SD2pPj4zIil25zSBMX0sRU8ioUCji8FGDZs4DYmWnVsfzNjB3aB5V7Ff54njSZn6JFWsXki57AIYbW6rEY00XBYRQlwk"
               >

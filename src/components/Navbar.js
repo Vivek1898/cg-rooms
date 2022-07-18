@@ -10,6 +10,7 @@ function Navbar() {
   function Logout() {
   
     localStorage.removeItem("currentUser");
+    localStorage.removeItem("access_token")
    // history.push("/login")
     window.location.href = "/login";
   }

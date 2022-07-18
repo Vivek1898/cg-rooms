@@ -6,7 +6,7 @@ import MyBookingScreen from "./MyBookingScreen";
 import MyMessBookingScreen from "./MyMessBookingScreen";
 import MyGymBookingScreen from "./MyGymBookingScreen";
 import Navbar from "../components/Navbar";
-
+import UserRoute from "../Routes/UserRoute";
 const { TabPane } = Tabs;
 
 function ProfileScreen() {
@@ -25,7 +25,8 @@ function ProfileScreen() {
   return (
     <>
     <Navbar />
-    <div className="ml-3 mt-3">
+    <UserRoute>
+    {user && <div className="ml-3 mt-3">
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="Profile" key="1">
           <div className="row">
@@ -34,14 +35,7 @@ function ProfileScreen() {
                 <p>My Profile</p>
                 <p>Name : {user.name}</p>
                 <p>Email : {user.email}</p>
-                <p>
-                  IsAdmin :{" "}
-                  {user.isAdmin ? (
-                    <Tag color="green">YES</Tag>
-                  ) : (
-                    <Tag color="red">NO</Tag>
-                  )}
-                </p>
+              
               </div>
             </div>
           </div>
@@ -56,7 +50,9 @@ function ProfileScreen() {
           <MyGymBookingScreen></MyGymBookingScreen>
         </TabPane>
       </Tabs>
-    </div>
+    </div>}
+    </UserRoute>
+  
     </>
   );
 }

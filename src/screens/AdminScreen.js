@@ -17,7 +17,7 @@ import AdminGymBookingScreen from "./AdminGymBookingScreen";
 import AdminLaundaryScreen from "./AdminLaundaryScreen";
 import AdminAddLaundaryScreec from "./AdminAddLaundaryScreec";
 import Navbar from "../components/Navbar";
-
+import AdminRoute from "../Routes/AdminRoute"
 const { TabPane } = Tabs;
 function callback(key) {
   console.log(key);
@@ -34,7 +34,7 @@ function AdminScreen() {
   return (
     <>
     <Navbar />
-    <div className="ml-3 mt-3 mr-3 bs">
+    <AdminRoute><div className="ml-3 mt-3 mr-3 bs">
       <h1 className="text-center">Admin Panel</h1>
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane tab="Bookings" key="1">
@@ -82,7 +82,8 @@ function AdminScreen() {
           <AdminAddLaundaryScreec></AdminAddLaundaryScreec>
         </TabPane>
       </Tabs>
-    </div>
+    </div></AdminRoute>
+    
     </>
   );
 }

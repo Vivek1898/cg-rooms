@@ -7,11 +7,12 @@ import Navbar from "../components/Navbar";
 import { Button } from "antd";
 import { MailOutlined, GoogleOutlined } from "@ant-design/icons";
 import {BrowserRouter as Router, Route, Link ,useHistory} from 'react-router-dom'
+import { toast } from "react-toastify";
 
 function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [submit, setSubmit] = useState(false);
@@ -30,7 +31,8 @@ function LoginScreen() {
     try {
       const result = (await axios.post("/api/users/login", user)).data;
       console.log(result);
-      localStorage.setItem("currentUser", JSON.stringify(result));
+      localStorage.setItem("currentUser", JSON.stringify(result.user));
+      localStorage.setItem("access_token", result.token);
       window.location.href = "/home";
     } catch (error) {
       console.log(error);
@@ -58,8 +60,9 @@ function LoginScreen() {
         const idTokenResult = await user.getIdTokenResult();
         console.log(user)
         const post = (await axios.post("/api/users/crateuser", {email:user.email,dname:user.displayName}));
-        console.log(post.data);
-        localStorage.setItem("currentUser", JSON.stringify(post.data));
+        console.log(post.data.user);
+        localStorage.setItem("currentUser", JSON.stringify(post.data.user));
+        localStorage.setItem("access_token", post.data.token);
         window.location.href = "/home";
 
        
