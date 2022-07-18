@@ -18,8 +18,10 @@ function AdminBookingScreen() {
     },
     { title: "gymid", dataIndex: "gymid", key: "gymid" },
     { title: "gym", dataIndex: "gym", key: "gym" },
+    { title: "userid", dataIndex: "userid", key: "userid" },
     { title: "fromdate", dataIndex: "fromdate", key: "fromdate" },
     { title: "todate", dataIndex: "todate", key: "todate" },
+    { title: "totalamount", dataIndex: "totalamount", key: "totalamount" },
     {
       title: "status",
       dataIndex: "status",

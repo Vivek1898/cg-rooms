@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Table, Tag, Space } from "antd";
+import { Button, Input, Table, Tag, Space } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 
 import Loader from "../components/Loader";
 import Error from "../components/Error";
@@ -11,13 +12,165 @@ function AdminUserScreen() {
   const [error, setError] = useState("");
 
   const columns = [
-    { title: "userid", dataIndex: "_id", key: "_id" },
+    { title: "userid",
+     dataIndex: "_id",
+      key: "_id",
+      filterDropdown: ({
+        setSelectedKeys,
+        selectedKeys,
+        confirm,
+        clearFilters,
+      }) => {
+        return (
+          <>
+            <Input
+              autoFocus
+              placeholder="Type text here"
+              value={selectedKeys[0]}
+              onChange={(e) => {
+                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                confirm({ closeDropdown: false });
+              }}
+              onPressEnter={() => {
+                confirm();
+              }}
+              onBlur={() => {
+                confirm();
+              }}
+            ></Input>
+            <Button
+              onClick={() => {
+                confirm();
+              }}
+              type="primary"
+            >
+              Search
+            </Button>
+            <Button
+              onClick={() => {
+                clearFilters();
+              }}
+              type="danger"
+            >
+              Reset
+            </Button>
+          </>
+        );
+      },
+      filterIcon: () => {
+        return <SearchOutlined />;
+      },
+      onFilter: (value, record) => {
+        return record._id.includes(value);
+      },
+    
+    },
     {
       title: "name",
       dataIndex: "name",
       key: "name",
+      filterDropdown: ({
+        setSelectedKeys,
+        selectedKeys,
+        confirm,
+        clearFilters,
+      }) => {
+        return (
+          <>
+            <Input
+              autoFocus
+              placeholder="Type text here"
+              value={selectedKeys[0]}
+              onChange={(e) => {
+                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                confirm({ closeDropdown: false });
+              }}
+              onPressEnter={() => {
+                confirm();
+              }}
+              onBlur={() => {
+                confirm();
+              }}
+            ></Input>
+            <Button
+              onClick={() => {
+                confirm();
+              }}
+              type="primary"
+            >
+              Search
+            </Button>
+            <Button
+              onClick={() => {
+                clearFilters();
+              }}
+              type="danger"
+            >
+              Reset
+            </Button>
+          </>
+        );
+      },
+      filterIcon: () => {
+        return <SearchOutlined />;
+      },
+      onFilter: (value, record) => {
+        return record.name.toLowerCase().includes(value.toLowerCase());
+      },
     },
-    { title: "email", dataIndex: "email", key: "email" },
+    { title: "email",
+     dataIndex: "email",
+      key: "email" ,
+    
+      filterDropdown: ({
+        setSelectedKeys,
+        selectedKeys,
+        confirm,
+        clearFilters,
+      }) => {
+        return (
+          <>
+            <Input
+              autoFocus
+              placeholder="Type text here"
+              value={selectedKeys[0]}
+              onChange={(e) => {
+                setSelectedKeys(e.target.value ? [e.target.value] : []);
+                confirm({ closeDropdown: false });
+              }}
+              onPressEnter={() => {
+                confirm();
+              }}
+              onBlur={() => {
+                confirm();
+              }}
+            ></Input>
+            <Button
+              onClick={() => {
+                confirm();
+              }}
+              type="primary"
+            >
+              Search
+            </Button>
+            <Button
+              onClick={() => {
+                clearFilters();
+              }}
+              type="danger"
+            >
+              Reset
+            </Button>
+          </>
+        );
+      },
+      filterIcon: () => {
+        return <SearchOutlined />;
+      },
+      onFilter: (value, record) => {
+        return record.name.toLowerCase().includes(value.toLowerCase());
+      },
+    },
 
     {
       title: "isAdmin",
@@ -33,6 +186,9 @@ function AdminUserScreen() {
         </>
       ),
     },
+
+
+
   ];
 
   async function fetchMyData() {

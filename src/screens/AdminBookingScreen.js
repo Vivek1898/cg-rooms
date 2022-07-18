@@ -17,10 +17,12 @@ function AdminBookingScreen() {
       key: "transactionid",
     },
     { title: "uniqueId", dataIndex: "uniqueId", key: "uniqueId" },
-    { title: "roomid", dataIndex: "roomid", key: "roomid" },
+    { title: "userid", dataIndex: "userid", key: "userid" },
     { title: "room", dataIndex: "room", key: "room" },
     { title: "fromdate", dataIndex: "fromdate", key: "fromdate" },
     { title: "todate", dataIndex: "todate", key: "todate" },
+    { title: "totaldays", dataIndex: "totaldays", key: "totaldays" },
+    { title: "totalamount", dataIndex: "totalamount", key: "totalamount" },
     {
       title: "status",
       dataIndex: "status",
