@@ -16,6 +16,7 @@ function RegisterScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [submit, setSubmit] = useState(false);
 
   async function register() {
     if (password === cpassword) {
@@ -47,6 +48,13 @@ function RegisterScreen() {
     }
   }
 
+  const handleSubmit = () => {
+    if (email && password && cpassword ) {
+      setSubmit(true);
+    }
+  }
+
+
   return (
     <>
     <Navbar />
@@ -67,6 +75,7 @@ function RegisterScreen() {
               onChange={(e) => {
                 setName(e.target.value);
               }}
+              required
             />
             <input
               type="email"
@@ -76,6 +85,7 @@ function RegisterScreen() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              required
             />
             <input
               type="password"
@@ -93,12 +103,14 @@ function RegisterScreen() {
               value={cpassword}
               onChange={(e) => {
                 setCpassword(e.target.value);
+                handleSubmit();
               }}
+              required
             />
             {loading ? (
               <div>Registering... Please Wait...</div>
             ) : (
-              <button className="btn btn-primary mt-3" onClick={register}>
+              <button className="btn btn-primary mt-3" onClick={register} disabled={!submit}>
                 Register
               </button>
             )}

@@ -22,7 +22,7 @@ function Navbar() {
             Room mates
           </a>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <a className="nav-link" href="/mess">
             Mess
           </a>
@@ -37,7 +37,7 @@ function Navbar() {
             Gym
           </a>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <a className="nav-link" href="/maid">
             Maid
           </a>
@@ -59,7 +59,7 @@ function Navbar() {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i class="fas fa-user mr-2"></i>
+              <i className="fas fa-user mr-2"></i>
               {user.name}
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -108,7 +108,7 @@ function Navbar() {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon">
-            <i class="fas fa-bars" style={{ color: "white" }}></i>
+            <i className="fas fa-bars" style={{ color: "white" }}></i>
           </span>
         </button>
 

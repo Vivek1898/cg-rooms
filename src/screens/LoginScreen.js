@@ -11,7 +11,7 @@ function LoginScreen() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [submit, setSubmit] = useState(false);
 
   async function Login() {
     setLoading(true);
@@ -31,6 +31,13 @@ function LoginScreen() {
     }
     setLoading(false);
   }
+
+  const handleSubmit = () => {
+    if (email && password ) {
+      setSubmit(true);
+    }
+  }
+
   return (
     <>
     <Navbar />
@@ -51,6 +58,7 @@ function LoginScreen() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              required
             />
             <input
               type="password"
@@ -59,12 +67,13 @@ function LoginScreen() {
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
+                handleSubmit();
               }}
             />
             {loading ? (
               <div>Login...Please Wait...</div>
             ) : (
-              <button className="btn btn-primary mt-3" onClick={Login}>
+              <button className="btn btn-primary mt-3" onClick={Login} disabled={!submit} >
                 Login
               </button>
             )}
