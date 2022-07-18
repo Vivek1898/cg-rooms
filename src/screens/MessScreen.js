@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "antd/dist/antd.css";
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
 import moment from "moment";
 
 import Mess from "../components/Mess";
@@ -10,6 +10,7 @@ import Error from "../components/Error";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import Navbar from "../components/Navbar";
 // ..
 AOS.init({
   duration: 1000,
@@ -81,7 +82,7 @@ function Homescreen() {
           }
         }
         //
-        if (availability == true || room.currentbookings.length == 0) {
+        if (availability === true || room.currentbookings.length === 0) {
           tempRooms.push(room);
         }
       }
@@ -100,7 +101,7 @@ function Homescreen() {
     console.log(type);
     if (type !== "all") {
       const tempRooms = duplicateRooms.filter(
-        (x) => x.type.toLowerCase() == type.toLowerCase()
+        (x) => x.type.toLowerCase() === type.toLowerCase()
       );
       setRooms(tempRooms);
     } else {
@@ -109,8 +110,10 @@ function Homescreen() {
   }
 
   return (
+    <>
+    <Navbar />
     <div className="container">
-      <div className="row mt-5 bs">
+      <div className="row mt-5 bs align-items-center"  style={{backgroundColor: "rgb(0, 63, 145)"}}>
         <div className="col-md-3">
           <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
         </div>
@@ -158,6 +161,7 @@ function Homescreen() {
         )}
       </div>
     </div>
+    </>
   );
 }
 

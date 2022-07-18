@@ -1,13 +1,12 @@
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Footer from '../components/Footer';
-import Form from '../components/Form';
+import Footer from "../components/Footer";
+import Form from "../components/Form";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <div>
-     <h1>Book uour Pg</h1>
-     <Form/>
+      <Navbar />
+      <Form />
       <Footer />
     </div>
   );

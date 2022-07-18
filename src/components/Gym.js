@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Modal, Button, Carousel } from "react-bootstrap";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Gym({ room, fromDate, toDate }) {
   const [show, setShow] = useState(false);

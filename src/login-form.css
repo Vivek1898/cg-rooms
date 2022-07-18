@@ -1,0 +1,57 @@
+.login-main {
+    background-image: url("https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/home-bg_hgu3rq.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.login-main input, .form-control {
+    background: none;
+	font-size: 1rem;
+    color: white;
+    border: none;
+	border: 1px solid transparent;
+    background: rgba(255,255,255,.2);
+	backdrop-filter: blur(5px);
+	border-radius: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+    margin: 1rem 0;
+    transition: 0.3s;
+}
+
+.login-main input::-webkit-input-placeholder, .form-control::-webkit-input-placeholder {
+	color: rgba(255,255,255,.8) !important;
+}
+
+.login-main input::-moz-placeholder, .form-control::-moz-placeholder { /* Firefox 19+ */
+	color: rgba(255,255,255,.8) !important;
+}
+.login-main input:-ms-input-placeholder, .form-control:-ms-input-placeholder { /* IE 10+ */
+	color: rgba(255,255,255,.8) !important;
+}
+.login-main input:-moz-placeholder, .form-control:-moz-placeholder { /* Firefox 18- */
+	color: rgba(255,255,255,.8) !important;
+}
+
+.login-main input:hover, .login-main input:focus, 
+.login-main .form-control:hover, .login-main .form-control:focus {
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	border-color: rgba(255,255,255,.4);
+}
+.login-main input:focus, .login-main .form-control:focus {
+	border-color: rgba(255,255,255,.4);
+    color: white;
+}
+
+.login-main .btn {
+    background-color: var(--primary) !important;
+    width: 100%;
+}
+
+.login-main .btn-primary {
+    border-color: var(--primary) !important;
+}

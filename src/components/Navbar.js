@@ -1,15 +1,22 @@
 import React from "react";
+import{ useState, useEffect } from "react";
 import { render } from 'react-dom'
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link ,useHistory} from 'react-router-dom'
 import Mess from "../screens/MessScreen"
 
 function Navbar() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
-
+  const history = useHistory();
   function Logout() {
+  
     localStorage.removeItem("currentUser");
+   // history.push("/login")
     window.location.href = "/login";
   }
+
+  // async function fetchMyData(){
+
+  // }
 
   const navAction = () => {
     if (user) {
@@ -18,41 +25,41 @@ function Navbar() {
          
         
            <li class="nav-item">
-           <a className="nav-link" href="/maid">
+           <Link className="nav-link" to="/maid">
            Maid
-          </a>
+          </Link>
       </li>
       <li class="nav-item">
-           <a className="nav-link" href="/mess">
+           <Link className="nav-link" to="/mess">
            Mess
-          </a>
+          </Link>
       </li>
 
       <li className="nav-item active">
-          <a className="nav-link" href="/home">
+          <Link className="nav-link" to="/home">
            Rooms
-          </a>
+          </Link>
           </li>
            <li className="nav-item active">
-          <a className="nav-link" href="/laundary">
+          <Link className="nav-link" to="/laundary">
            Laundary
-          </a>
+          </Link>
           </li>
           <li className="nav-item active">
-          <a className="nav-link" href="/gym">
+          <Link className="nav-link" to="/gym">
            Gym
-          </a>
+          </Link>
           </li>
           <li className="nav-item active">
-          <a className="nav-link" href="/bookurpg">
+          <Link className="nav-link" to="/bookurpg">
            Owner
-          </a>
+          </Link>
           </li>
 
           <li className="nav-item active">
-          <a className="nav-link" href="/roomates">
+          <Link className="nav-link" to="/roomates">
            Room mates
-          </a>
+          </Link>
           </li>
 
 
@@ -71,13 +78,13 @@ function Navbar() {
               {user.name}
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="/profile">
+              <Link className="dropdown-item" to="/profile">
                 Profile
-              </a>
+              </Link>
 
-              <a className="dropdown-item" href="#" onClick={Logout}>
+              <Link className="dropdown-item" to="#" onClick={Logout}>
                 Logout
-              </a>
+              </Link>
             </div>
           </div>
         </ul>
@@ -88,52 +95,52 @@ function Navbar() {
       
       <ul className="navbar-nav">
         <li className="nav-item active">
-          <a className="nav-link" href="/roomates">
+          <Link className="nav-link" to="/roomates">
            Room mates
-          </a>
+          </Link>
           </li>
 
 <li className="nav-item active">
-          <a className="nav-link" href="/bookurpg">
+          <Link className="nav-link" to="/bookurpg">
            Owner
-          </a>
+          </Link>
           </li>
           <li className="nav-item active">
-          <a className="nav-link" href="/home">
+          <Link className="nav-link" to="/home">
            Rooms
-          </a>
+          </Link>
           </li>
            <li className="nav-item active">
-          <a className="nav-link" href="/laundary">
+          <Link className="nav-link" to="/laundary">
            Laundary
-          </a>
+          </Link>
           </li>
           <li className="nav-item active">
-          <a className="nav-link" href="/gym">
+          <Link className="nav-link" to="/gym">
            Gym
-          </a>
+          </Link>
           </li>
         <li className="nav-item active">
-          <a className="nav-link" href="/mess">
+          <Link className="nav-link" to="/mess">
            Mess
-          </a>
+          </Link>
           </li>
           <li className="nav-item active">
-          <a className="nav-link" href="/maid">
+          <Link className="nav-link" to="/maid">
            Maid
-          </a>
+          </Link>
         </li>
 
 
         <li className="nav-item active">
-          <a className="nav-link" href="/register">
+          <Link className="nav-link" to="/register">
             Register
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/login">
+          <Link className="nav-link" to="/login">
             Login
-          </a>
+          </Link>
         </li>
       </ul>
     );
@@ -143,9 +150,9 @@ function Navbar() {
  
  <div>
       <nav className="navbar navbar-expand-lg">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
         College Grahasthi
-        </a>
+        </Link>
        
           {/* <Link to="/maid">Linked Maid</Link> */}
          

@@ -1,16 +1,15 @@
+import {BrowserRouter as Router, Route, Link ,useHistory} from 'react-router-dom'
+
 const Image = ({ image, name, link }) => {
   return (
-    <div className='services-image'>
-      <div className='image-div'>
-        <img src={ image } alt="services" />
+    <div className="services-image">
+      <div className="image-div">
+        <img src={image} alt="services" />
       </div>
 
-      <a href={link}>
-        <div className='name-div'>
-          { name }
-        </div>
-      </a>
-
+      <Link to={link}>
+        <div className="name-div">{name}</div>
+      </Link>
     </div>
   );
 };

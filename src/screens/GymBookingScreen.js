@@ -5,6 +5,7 @@ import StripeCheckout from "react-stripe-checkout";
 import Swal from "sweetalert2";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import Navbar from "../components/Navbar";
 
 function GymBookingscreen({ match }) {
   const [loading, setLoading] = useState(true);
@@ -63,7 +64,10 @@ function GymBookingscreen({ match }) {
 
     try {
       setLoading(true);
-      const result = await axios.post("/api/gymbooking/bookgym", bookingDetails);
+      const result = await axios.post(
+        "/api/gymbooking/bookgym",
+        bookingDetails
+      );
       setLoading(false);
       Swal.fire(
         "Congratulations",
@@ -91,6 +95,8 @@ function GymBookingscreen({ match }) {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="m-5">
       {loading ? (
         <Loader></Loader>
@@ -139,6 +145,7 @@ function GymBookingscreen({ match }) {
         </div>
       )}
     </div>
+    </>
   );
 }
 

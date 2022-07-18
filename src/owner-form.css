@@ -1,0 +1,110 @@
+.main {
+    display: flex ;
+    justify-content: center;
+    padding: 4rem 0;
+    background-image: url("https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/home-bg_hgu3rq.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+	height: 100vh !important;
+}
+
+.main .contact-form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+	padding: 2rem;
+}
+
+.main .contact-form-wrapper form .roommate {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 8rem;
+	width: 100%;
+}
+
+.roommate .form-details {
+	display: flex;
+	flex-direction: column;
+	width: 45%;
+}
+
+.form-details .detail-h1 {
+	font-size: 1.5rem;
+}
+
+form .form-item {
+    width: 100%;
+	padding: 1rem 0;
+}
+
+.form-item input {
+    background: none;
+	font-size: 1rem;
+    color: white;
+    border: none;
+	border: 1px solid transparent;
+    background: rgba(255,255,255,.2);
+	backdrop-filter: blur(5px);
+	border-radius: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+    transition: 0.3s;
+}
+
+.form-item input::-webkit-input-placeholder {
+	color: rgba(255,255,255,.8) !important;
+}
+
+.form-item input::-moz-placeholder { /* Firefox 19+ */
+	color: rgba(255,255,255,.8) !important;
+}
+.form-item input:-ms-input-placeholder { /* IE 10+ */
+	color: rgba(255,255,255,.8) !important;
+}
+.form-item input:-moz-placeholder { /* Firefox 18- */
+	color: rgba(255,255,255,.8) !important;
+}
+
+.form-item input:hover, .form-item input:focus{
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	border-color: rgba(255,255,255,.4);
+}
+.form-item input:focus{
+	border-color: rgba(255,255,255,.4);
+}
+
+.submit-btn {
+	background-color: var(--primary);
+	border: 1px solid var(--primary);
+	border-radius: 40px;
+	box-shadow: none;
+	width: 100%;
+	text-transform: uppercase;
+	font-size: 1rem;
+	padding: 0.5rem 0;
+}
+
+@media screen and (max-width: 640px) {
+
+	.main {
+		height: fit-content !important;
+	}
+	
+	.main .contact-form-wrapper form .roommate {
+		flex-direction: column;
+		padding: 0 2rem;
+	}
+
+
+	.roommate .form-details {
+		width: 100%;
+	}
+
+}

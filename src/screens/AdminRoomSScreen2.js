@@ -30,24 +30,22 @@ function AdminRoomScreen() {
     { title: "rentperday", dataIndex: "rentperday", key: "rentperday" },
     { title: "type", dataIndex: "type", key: "type" },
     {
-      title: 'Action',
-      key: 'action',
+      title: "Action",
+      key: "action",
       render: (record) => (
-      
-          <>
-            <EditOutlined
-              onClick={() => {
-                onEditStudent(record);
-              }}
-            />
-            <DeleteOutlined
-              onClick={() => {
-                onDeleteStudent(record);
-              }}
-              style={{ color: "red", marginLeft: 12 }}
-            />
-          </>
-        
+        <>
+          <EditOutlined
+            onClick={() => {
+              onEditStudent(record);
+            }}
+          />
+          <DeleteOutlined
+            onClick={() => {
+              onDeleteStudent(record);
+            }}
+            style={{ color: "red", marginLeft: 12 }}
+          />
+        </>
       ),
     },
   ];
@@ -58,7 +56,7 @@ function AdminRoomScreen() {
     //   title: "Are you sure, you want to delete this student record?",
     //   okText: "Yes",
     //   okType: "danger",
-      
+
     //   onOk: () => {
     //     setDataSource((pre) => {
     //       return pre.filter((student) => student._id !== record._id);
@@ -67,11 +65,10 @@ function AdminRoomScreen() {
     // });
   };
   const onEditStudent = (record) => {
-    console.log(record._id)
+    console.log(record._id);
     setIsEditing(true);
     setEditingStudent({ ...record });
   };
- 
 
   async function fetchMyData() {
     setError("");

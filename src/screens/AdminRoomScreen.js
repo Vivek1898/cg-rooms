@@ -13,7 +13,7 @@ function AdminRoomScreen() {
   const [error, setError] = useState("");
   const [editingStudent, setEditingStudent] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const[availablity,setAvailablity]=useState(0)
+  const [availablity, setAvailablity] = useState(0);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -22,7 +22,6 @@ function AdminRoomScreen() {
   };
 
   const handleOk = (record) => {
-   
     setIsModalVisible(false);
   };
 
@@ -47,77 +46,85 @@ function AdminRoomScreen() {
     { title: "rentperday", dataIndex: "rentperday", key: "rentperday" },
     { title: "type", dataIndex: "type", key: "type" },
     {
-      title: 'Action',
-      key: 'action',
+      title: "Action",
+      key: "action",
       render: (record) => (
-      
-          <>
-            <Button
-               onClick={() => {
-                onEditStudent(record);
-              }}
-          
-             >Set</Button>
+        <>
+          <Button
+            onClick={() => {
+              onEditStudent(record);
+            }}
+          >
+            Set
+          </Button>
 
-<Button type="primary" onClick={showModal}>
-        Update
-      </Button>
-      <Modal title="Update" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Update Availablity</p>
-        <Input
-            value={availablity}
-            onChange={(e) => {setAvailablity(e.target.value)}}
-             
-         
-          />
-        <Button key="submit" type="primary" onClick={() => {
-                updateData(editingStudent,availablity);
-              }}>
-            Submit
-          </Button>,
-      </Modal>
-           
-            <DeleteOutlined
-              onClick={() => {
-                onEditStudent(record);
+          <Button type="primary" onClick={showModal}>
+            Update
+          </Button>
+          <Modal
+            title="Update"
+            visible={isModalVisible}
+            onOk={handleOk}
+            onCancel={handleCancel}
+          >
+            <p>Update Availablity</p>
+            <Input
+              value={availablity}
+              onChange={(e) => {
+                setAvailablity(e.target.value);
               }}
-              style={{ color: "red", marginLeft: 12 }}
             />
-          </>
-        
+            <Button
+              key="submit"
+              type="primary"
+              onClick={() => {
+                updateData(editingStudent, availablity);
+              }}
+            >
+              Submit
+            </Button>
+            ,
+          </Modal>
+
+          <DeleteOutlined
+            onClick={() => {
+              onEditStudent(record);
+            }}
+            style={{ color: "red", marginLeft: 12 }}
+          />
+        </>
       ),
     },
   ];
-  async function  updateData (record,availablity) {
+  async function updateData(record, availablity) {
     setError("");
     setLoading(true);
     console.log(record);
     console.log(availablity);
 
     try {
-      const data = (await axios.post("/api/rooms/updateavail",{record,availablity}));
-      console.log(data)
+      const data = await axios.post("/api/rooms/updateavail", {
+        record,
+        availablity,
+      });
+      console.log(data);
       fetchMyData();
-      setIsModalVisible(false)
+      setIsModalVisible(false);
     } catch (error) {
       console.log(error);
       setError(error);
     }
     setLoading(false);
-  };
-
-
+  }
 
   const onEditStudent = (record) => {
-    setEditingStudent(record._id)
+    setEditingStudent(record._id);
     console.log(record._id);
-  
   };
   // const onEditStudent = (record) => {
   //   console.log(record._id)
-   
+
   // };
- 
 
   async function fetchMyData() {
     setError("");

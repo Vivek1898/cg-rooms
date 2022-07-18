@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Form, Input, InputNumber, Button, Select } from "antd";
 
@@ -95,7 +95,7 @@ function AdminAddLaundaryScreen() {
                 },
               ]}
             >
-                  <Input />
+              <Input />
             </Form.Item>
             <Form.Item
               name="phonenumber"
@@ -152,7 +152,7 @@ function AdminAddLaundaryScreen() {
             >
               <Input />
             </Form.Item>
-            
+
             <Form.Item {...tailLayout}>
               <Button type="success" htmlType="submit">
                 Add

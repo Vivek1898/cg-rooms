@@ -5,6 +5,7 @@ import StripeCheckout from "react-stripe-checkout";
 import Swal from "sweetalert2";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import Navbar from "../components/Navbar";
 
 function MessBookingscreen({ match }) {
   const [loading, setLoading] = useState(true);
@@ -63,7 +64,10 @@ function MessBookingscreen({ match }) {
 
     try {
       setLoading(true);
-      const result = await axios.post("/api/messbooking/bookmess", bookingDetails);
+      const result = await axios.post(
+        "/api/messbooking/bookmess",
+        bookingDetails
+      );
       setLoading(false);
       Swal.fire(
         "Congratulations",
@@ -91,6 +95,8 @@ function MessBookingscreen({ match }) {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="m-5">
       {loading ? (
         <Loader></Loader>
@@ -139,6 +145,7 @@ function MessBookingscreen({ match }) {
         </div>
       )}
     </div>
+    </>
   );
 }
 
