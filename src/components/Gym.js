@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function Gym({ room, fromDate, toDate }) {
+function Mess({ room, fromDate, toDate }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -10,14 +10,13 @@ function Gym({ room, fromDate, toDate }) {
 
   return (
     <div className="row bs">
-      <h1>Select Date for bookings</h1>
       <div className="col-md-4">
         <img src={room.imageurls[0]} className="smallimg" alt="" />
       </div>
       <div className="col-md-7">
         <h1>{room.name}</h1>
         <b>
-          <p>Availability : {room.maxcount}</p>
+          <p>Availablity : {room.maxcount}</p>
           <p>Phone Number : +91 7850037958</p>
           <p>Type : {room.type}</p>
         </b>
@@ -65,4 +64,4 @@ function Gym({ room, fromDate, toDate }) {
   );
 }
 
-export default Gym;
+export default Mess;

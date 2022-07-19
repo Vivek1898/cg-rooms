@@ -23,7 +23,7 @@ function Room({ room, fromDate, toDate }) {
           <p>Type : {room.type}</p>
         </b>
 
-        <div style={{ float: "right" }}>
+        <div style={{ float: "right" }} className='d-flex flex-column align-items-center'>
           {fromDate && toDate && (
             <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
               <button className="btn btn-primary mb-2">Book Now</button>

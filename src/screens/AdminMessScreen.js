@@ -21,6 +21,7 @@ function AdminRoomScreen() {
       dataIndex: "name",
       key: "name",
     },
+    { title: "uniqueId", dataIndex: "uniqueId", key: "uniqueId" },
     { title: "maxcount", dataIndex: "maxcount", key: "maxcount" },
     { title: "phonenumber", dataIndex: "phonenumber", key: "phonenumber" },
     { title: "rentperday", dataIndex: "rentperday", key: "rentperday" },

@@ -32,6 +32,7 @@ function Homescreen() {
   useEffect(() => {
     async function fetchMyAPI() {
       try {
+      //  console.log(process.env.REACT_APP_STRIPE_KEY)
         setError("");
         setLoading(true);
         const data = (await axios.get("/api/rooms/getallrooms")).data;

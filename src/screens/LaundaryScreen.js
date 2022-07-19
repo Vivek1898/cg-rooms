@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, Tag, Space } from "antd";
-
+import { toast } from "react-toastify";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
+
 
 function AdminMaidScreen() {
   const [maids, setMaid] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+  const user = JSON.parse(localStorage.getItem("currentUser"));
   const columns = [
     {
       title: "Name",
@@ -38,6 +40,32 @@ function AdminMaidScreen() {
   useEffect(() => {
     fetchMyData();
   }, []);
+
+  async function onEditStudent(x){
+    console.log(x);
+
+  console.log(user._id)
+  const userid=user._id
+
+ 
+
+
+    setError("");
+    setLoading(true);
+    try {
+      const data = await axios.post("/api/laundary/booklaundary", {
+        userid,
+        x
+      });
+      console.log(data);
+     toast.success("Laundary Booked SuccessFully");
+     fetchMyData();
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+    setLoading(false);
+  }
 
   return (
     <>
@@ -79,9 +107,20 @@ function AdminMaidScreen() {
                   {/* <p className="card-text">Mobile : {x.phonenumber}</p>
                   <p className="card-text">address : {x.address}</p> */}
                   <p className="card-text">Description : {x.description}</p>
-                  <a href="#" className="btn btn-primary">
+                  { user &&  x.currentbookings.find(e => e.id === user._id) && <a href="#" className="btn btn-primary">
+                    Already Booked
+                  </a>}
+                  {/* {booked && <a href="#" className="btn btn-primary">
+                    Already Booked
+                  </a>} */}
+             {user && (!x.currentbookings.find(e => e.id === user._id))   &&  <a href="#" className="btn btn-primary"   onClick={() => {
+              onEditStudent(x);
+            }}>
                     Book Now
-                  </a>
+                  </a>}
+                  {!user &&      <Link to="/login" className="btn btn-primary"  >
+                  Login to  Book Now
+                  </Link>}
                   <p className="card-text">
                     <small className="text-muted">
                       Last updated 3 mins ago

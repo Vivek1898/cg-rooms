@@ -11,25 +11,19 @@ function AdminBookingScreen() {
   const [error, setError] = useState("");
 
   const columns = [
-    {
-      title: "transactionid",
-      dataIndex: "transactionid",
-      key: "transactionid",
-    },
     { title: "uniqueId", dataIndex: "uniqueId", key: "uniqueId" },
-    { title: "gymid", dataIndex: "gymid", key: "gymid" },
-    { title: "gym", dataIndex: "gym", key: "gym" },
+    { title: "maidid", dataIndex: "maidid", key: "maidid" },
+    { title: "price", dataIndex: "price", key: "price" },
     { title: "userid", dataIndex: "userid", key: "userid" },
-    { title: "fromdate", dataIndex: "fromdate", key: "fromdate" },
-    { title: "todate", dataIndex: "todate", key: "todate" },
-    { title: "totalamount", dataIndex: "totalamount", key: "totalamount" },
-    {
-      title: "status",
+    { title: "name", dataIndex: "name", key: "name" },
+    { title: "mobile", dataIndex: "mobile", key: "mobile" },
+   
+    {  title: "status",
       dataIndex: "status",
       key: "status",
       render: (status) => (
         <>
-          {status === "booked" ? (
+          {!status ? (
             <Tag color="green">CONFIRMED</Tag>
           ) : (
             <Tag color="red">CANCELLED</Tag>
@@ -43,7 +37,7 @@ function AdminBookingScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/gymbooking/getallbookings")).data;
+      const data = (await axios.post("/api/maid/getallbookings")).data;
       setBookings(data);
     } catch (error) {
       console.log(error);

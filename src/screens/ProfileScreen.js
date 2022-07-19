@@ -7,6 +7,8 @@ import MyMessBookingScreen from "./MyMessBookingScreen";
 import MyGymBookingScreen from "./MyGymBookingScreen";
 import Navbar from "../components/Navbar";
 import UserRoute from "../Routes/UserRoute";
+import MyMaidBookingScreen from "./MyMaidBookingScreen";
+import MyLaundaryBookingRoute from "./MyLaundaryBookingRoute"
 const { TabPane } = Tabs;
 
 function ProfileScreen() {
@@ -49,6 +51,14 @@ function ProfileScreen() {
         <TabPane tab="Gym Booking" key="4">
           <MyGymBookingScreen></MyGymBookingScreen>
         </TabPane>
+
+        <TabPane tab="Maid Booking" key="5">
+          <MyMaidBookingScreen></MyMaidBookingScreen>
+        </TabPane>
+        <TabPane tab="Laundary Booking" key="6">
+        <MyLaundaryBookingRoute></MyLaundaryBookingRoute>
+        </TabPane>
+        
       </Tabs>
     </div>}
     </UserRoute>

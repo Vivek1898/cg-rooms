@@ -26,7 +26,7 @@ const Form = () => {
     };
     console.log(formData);
 
-    axios.post(process.env.REACT_OWNER_API, formData).then((response) => {
+    axios.post(process.env.REACT_APP_OWNER_API, formData).then((response) => {
       console.log(response);
     });
     toast("Congratulation " + Name + " Registration Sucessfull");

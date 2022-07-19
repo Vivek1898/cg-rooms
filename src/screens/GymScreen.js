@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import { DatePicker } from "antd";
 import moment from "moment";
 
-import Gym from "../components/Gym";
+import Mess from "../components/Gym";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 
@@ -35,7 +35,7 @@ function Homescreen() {
         setError("");
         setLoading(true);
         const data = (await axios.get("/api/gym/getallgym")).data;
-        //console.log(data);
+        console.log(data);
         setRooms(data);
         setDuplicateRooms(data);
       } catch (error) {
@@ -113,7 +113,7 @@ function Homescreen() {
     <>
     <Navbar />
     <div className="container">
-      <div className="row mt-5 bs align-items-center" style={{backgroundColor: "rgb(0, 63, 145)"}}>
+      <div className="row mt-5 bs align-items-center"  style={{backgroundColor: "rgb(0, 63, 145)"}}>
         <div className="col-md-3">
           <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
         </div>
@@ -122,7 +122,7 @@ function Homescreen() {
           <input
             type="text"
             className="form-control"
-            placeholder="search Gym"
+            placeholder="search Mess"
             value={searchKey}
             onChange={(e) => {
               setSearchKey(e.target.value);
@@ -139,7 +139,8 @@ function Homescreen() {
             }}
           >
             <option value="all">All</option>
-            <option value="UniSex">UniSex</option>
+            <option value="VEG">VEG</option>
+              <option value="NON-VEG">NON-VEG</option>
           </select>
         </div>
       </div>
@@ -153,7 +154,7 @@ function Homescreen() {
           rooms.map((x) => {
             return (
               <div className="col-md-9 mt-3" data-aos="flip-down">
-                <Gym room={x} fromDate={fromDate} toDate={toDate} />
+                <Mess room={x} fromDate={fromDate} toDate={toDate} />
               </div>
             );
           })

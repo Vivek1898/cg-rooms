@@ -10,7 +10,8 @@ import AdminMaidScreen from "./AdminMaidScreen";
 import AdminAddMessScreen from "./AdminAddMessScreen";
 import AdminMessScreen from "./AdminMessScreen";
 import AdminMessBookingScreen from "./AdminMessBookingScreen";
-
+import AdminMaidBookingScreen from"./AdminMaidBookingScreen";
+import AdminLaundaryBookingScreen from"./AdminLaundaryBookingScreen";
 import AdminAddGymScreen from "./AdminAddGymScreen";
 import AdminGymScreen from "./AdminGymScreen";
 import AdminGymBookingScreen from "./AdminGymBookingScreen";
@@ -78,9 +79,16 @@ function AdminScreen() {
         <TabPane tab="Laundary" key="13">
           <AdminLaundaryScreen></AdminLaundaryScreen>
         </TabPane>
-        <TabPane tab="Laundary Booking" key="14">
+        <TabPane tab="Add Laundary " key="14">
           <AdminAddLaundaryScreec></AdminAddLaundaryScreec>
         </TabPane>
+        <TabPane tab="Maid Booking" key="15">
+        <AdminMaidBookingScreen></AdminMaidBookingScreen>
+        </TabPane>
+        <TabPane tab="Laundary Booking" key="16">
+        <AdminLaundaryBookingScreen></AdminLaundaryBookingScreen>
+        </TabPane>
+        
       </Tabs>
     </div></AdminRoute>
     

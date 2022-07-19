@@ -17,6 +17,7 @@ function AdminMaidScreen() {
       dataIndex: "name",
       key: "name",
     },
+    { title: "uniqueId", dataIndex: "uniqueId", key: "uniqueId" },
     { title: "email", dataIndex: "email", key: "email" },
     { title: "mobile", dataIndex: "mobile", key: "mobile" },
     { title: "price", dataIndex: "price", key: "price" },

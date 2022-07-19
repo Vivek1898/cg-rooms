@@ -35,7 +35,7 @@ function AdminAddLaundaryScreen() {
     setLoading(true);
     try {
       const data = (await axios.post("/api/laundary/addlaundary", values)).data;
-      Swal.fire("Congratulations", "Your Room Added Successfully", "success");
+      Swal.fire("Congratulations", "Your LaundaryAdded Successfully", "success");
       form.resetFields();
     } catch (error) {
       console.log(error);

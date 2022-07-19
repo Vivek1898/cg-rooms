@@ -140,7 +140,7 @@ function GymBookingscreen({ match }) {
                 amount={totalAmount * 100}
                 currency="INR"
                 token={onToken}
-                stripeKey="pk_test_51LL6J6SD2pPj4zIil25zSBMX0sRU8ioUCji8FGDZs4DYmWnVsfzNjB3aB5V7Ff54njSZn6JFWsXki57AIYbW6rEY00XBYRQlwk"
+                stripeKey={process.env.REACT_APP_STRIPE_KEY}
               >
                 <button className="btn btn-primary">Pay Now</button>
               </StripeCheckout>

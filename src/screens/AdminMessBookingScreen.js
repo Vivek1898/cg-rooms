@@ -16,6 +16,7 @@ function AdminBookingScreen() {
       dataIndex: "transactionid",
       key: "transactionid",
     },
+    { title: "uniqueId", dataIndex: "uniqueId", key: "uniqueId" },
     { title: "messid", dataIndex: "messid", key: "messid" },
     { title: "mess", dataIndex: "mess", key: "mess" },
     { title: "userid", dataIndex: "userid", key: "userid" },

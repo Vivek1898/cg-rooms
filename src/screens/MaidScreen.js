@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, Tag, Space } from "antd";
-
+import { toast } from "react-toastify";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 function AdminMaidScreen() {
   const [maids, setMaid] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [booked, setbooked] = useState(false);
   const [error, setError] = useState("");
+  const user = JSON.parse(localStorage.getItem("currentUser"));
 
   const columns = [
     {
@@ -27,7 +30,29 @@ function AdminMaidScreen() {
     setLoading(true);
     try {
       const data = (await axios.post("/api/maid/getallmaids")).data;
+
+      // for(x in data){
+      //   let obj = x.currentbookings.find(o => o.name === user._id);
+      //   console.log(obj)
+      // }
+    //   data.forEach(element => {
+    //     console.log(element.currentbookings)
+    //      let obj = element.currentbookings.find(o => {
+    //       if(o.id){
+    //         o.id === user._id
+    //       }
+         
+    //      });
+    //      if(obj){
+    //       console.log(obj.id)
+    //       setbooked(true);
+    //      }
+      
+    //     // ...use `element`...
+    // });
+   //   console.log(data)
       setMaid(data);
+     
     } catch (error) {
       console.log(error);
       setError(error);
@@ -37,6 +62,32 @@ function AdminMaidScreen() {
   useEffect(() => {
     fetchMyData();
   }, []);
+
+  async function onEditStudent(x){
+    console.log(x);
+
+  console.log(user._id)
+  const userid=user._id
+
+ 
+
+
+    setError("");
+    setLoading(true);
+    try {
+      const data = await axios.post("/api/maid/bookmaid", {
+        userid,
+        x
+      });
+      console.log(data);
+     toast.success("Maid Booked SuccessFully");
+     fetchMyData();
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+    setLoading(false);
+  }
 
   return (
     <>
@@ -69,9 +120,21 @@ function AdminMaidScreen() {
                   {/* <p className="card-text">Email : {x.email}</p>
                   <p className="card-text">Mobile : {x.mobile}</p> */}
                   <p className="card-text">Price : {x.price}</p>
-                  <a href="#" className="btn btn-primary">
+
+                  { user &&  x.currentbookings.find(e => e.id === user._id) && <a href="#" className="btn btn-primary">
+                    Already Booked
+                  </a>}
+                  {/* {booked && <a href="#" className="btn btn-primary">
+                    Already Booked
+                  </a>} */}
+             {user && (!x.currentbookings.find(e => e.id === user._id))   &&  <a href="#" className="btn btn-primary"   onClick={() => {
+              onEditStudent(x);
+            }}>
                     Book Now
-                  </a>
+                  </a>}
+                  {!user &&      <Link to="/login" className="btn btn-primary"  >
+                  Login to  Book Now
+                  </Link>}
                   <p className="card-text">
                     <small className="text-muted">
                       Last updated 3 mins ago
