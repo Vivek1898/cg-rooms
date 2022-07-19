@@ -122,7 +122,7 @@ function Homescreen() {
           <input
             type="text"
             className="form-control"
-            placeholder="search Mess"
+            placeholder="search Gym"
             value={searchKey}
             onChange={(e) => {
               setSearchKey(e.target.value);
