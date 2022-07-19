@@ -57,32 +57,10 @@ function Homescreen() {
 
       var tempRooms = [];
       for (const room of duplicateRooms) {
-        var availability = false;
-        if (room.currentbookings.length > 0) {
-          for (const booking of room.currentbookings) {
-            if (
-              !moment(moment(dates[0]).format("DD-MM-YYYY")).isBetween(
-                booking.fromdate,
-                booking.todate
-              ) &&
-              !moment(moment(dates[1]).format("DD-MM-YYYY")).isBetween(
-                booking.fromdate,
-                booking.todate
-              )
-            ) {
-              if (
-                moment(dates[0]).format("DD-MM-YYYY") !== booking.fromdate &&
-                moment(dates[0]).format("DD-MM-YYYY") !== booking.todate &&
-                moment(dates[1]).format("DD-MM-YYYY") !== booking.fromdate &&
-                moment(dates[1]).format("DD-MM-YYYY") !== booking.todate
-              ) {
-                availability = true;
-              }
-            }
-          }
-        }
+        var availability = true;
+        
         //
-        if (availability === true || room.currentbookings.length === 0) {
+        if (availability === true ) {
           tempRooms.push(room);
         }
       }

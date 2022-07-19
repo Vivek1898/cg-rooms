@@ -1,11 +1,12 @@
 import Nav from "./Nav";
+import Navbar from "./Navbar";
 import Button from "./Button";
 
 const Hero = () => {
   return (
     <div>
       <div className="hero">
-        <Nav />
+        <Navbar />
 
         <div className="hero-des">
 
