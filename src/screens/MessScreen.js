@@ -144,6 +144,7 @@ function Homescreen() {
           </select>
         </div>
       </div>
+      <h1 className="m-auto pt-5">Select Date for bookings</h1>
 
       <div className="row justify-content-center mt-5">
         {loading ? (

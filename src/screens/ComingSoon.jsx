@@ -7,10 +7,10 @@ const ComingSoon = () => {
   return (
     <>
       <Navbar />
-     
-      <div className="coming-soon"> 404 <br/>NOT FOUND </div>
-
-
+      <div className="coming-soon d-flex flex-column"> 
+        <div>404</div>
+        <div>NOT FOUND</div>
+      </div>
       <Footer />
     </>
   );

@@ -163,7 +163,7 @@ function AdminAddRoomScreen() {
               ]}
             >
               <Select placeholder="Select a room type" allowClear>
-                <Option value="UniSex">UniSex</Option>
+                <Option value="UNISEX">UNISEX</Option>
             
               </Select>
             </Form.Item>

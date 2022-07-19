@@ -5,7 +5,7 @@ import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Success from "../components/Success";
 import Navbar from "../components/Navbar";
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 
 function RegisterScreen() {
   const [name, setName] = useState("");
@@ -115,10 +115,20 @@ function RegisterScreen() {
             {loading ? (
               <div>Registering... Please Wait...</div>
             ) : (
-              <button className="btn btn-primary mt-3" onClick={register} disabled={!submit}>
+              <button className="btn btn-primary mt-3 p-3" onClick={register} disabled={!submit}>
                 Register
               </button>
             )}
+
+<div className="p-3 m-2"style={{    backgroundColor: "rgb(0 0 0 / 80%)"}}>
+<p className="text-center text-success    ">
+          Already registered?{" "}
+          <Link to="/login">
+            <a>Login</a>
+            </Link>  
+          </p>
+</div>
+
           </div>
         </div>
       </div>

@@ -22,9 +22,11 @@ import ComingSoon from "./screens/ComingSoon";
 import ForgotPassword from "./screens/ForgotPassword";
 import NotFound from "./screens/ComingSoon";
 
+
 function App() {
   return (
     <Router className="App">
+
       <ToastContainer position="top-center" />
 
       <Switch>

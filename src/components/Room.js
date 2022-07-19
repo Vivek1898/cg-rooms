@@ -15,7 +15,7 @@ function Room({ room, fromDate, toDate }) {
       <div className="col-md-4">
         <img src={room.imageurls[0]} className="smallimg" alt="" />
       </div>
-      <div className="col-md-7">
+      <div className="col-md-7 ">
         <h1>{room.name}</h1>
         <b>
           <p>Availability: {room.maxcount}</p>
@@ -23,14 +23,14 @@ function Room({ room, fromDate, toDate }) {
           <p>Type : {room.type}</p>
         </b>
 
-        <div style={{ float: "right" }} className='d-flex flex-column align-items-center'>
+        <div style={{ float: "right" }} >
           {fromDate && toDate && (
             <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
-              <button className="btn btn-primary mb-2">Book Now</button>
+              <button className="btn btn-primary mb-2 mr-2">Book Now</button>
             </Link>
           )}
 
-          <button className="btn btn-primary" onClick={handleShow}>
+          <button className="btn btn-primary mb-2 mr-2" onClick={handleShow}>
             View Detail
           </button>
         </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -40,45 +42,45 @@ const Footer = () => {
         <div className="footer-des-card">
           <div className="h1">Company</div>
           <div className="footer-des-card-info">
-            <a href="/comingsoon">About</a>
-            <a href="/comingsoon">Careers</a>
-            <a href="/comingsoon">Blogs</a>
+            <Link to="/comingsoon">About</Link>
+            <Link to="/comingsoon">Careers</Link>
+            <Link to="/comingsoon">Blogs</Link>
           </div>
         </div>
 
         <div className="footer-des-card">
           <div className="h1">Get Help</div>
           <div className="footer-des-card-info">
-            <a href="/comingsoon">How It Works</a>
-            <a href="/comingsoon">FAQs</a>
-            <a href="/comingsoon">Contact</a>
-            <a href="/comingsoon">Terms</a>
-            <a href="/comingsoon">Privacy</a>
-            <a href="/comingsoon">Sitemap</a>
+            <Link to="/comingsoon">How It Works</Link>
+            <Link to="/comingsoon">FAQs</Link>
+            <Link to="/comingsoon">Contact</Link>
+            <Link to="/comingsoon">Terms</Link>
+            <Link to="/comingsoon">Privacy</Link>
+            <Link to="/comingsoon">Sitemap</Link>
           </div>
         </div>
 
         <div className="contact">
           <div className="h1">Contact Us</div>
           <div className="direct-contact-div">
-            <a href="tel:7850037958" className="direct-contact">
+            <Link to="tel:7850037958" className="direct-contact">
               <img
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/call_qwfllq.png"
                 alt="call"
               />
               <div>+91 7850037958</div>
-            </a>
+            </Link>
 
-            <a href="tel:7091045216" className="direct-contact">
+            <Link to="tel:7091045216" className="direct-contact">
               <img
                 src="https://res.cloudinary.com/shishirasdjfadsfj/image/upload/v1657875012/CollegeGrahasthiWeb/call_qwfllq.png"
                 alt="call"
               />
               <div>+91 7091045216</div>
-            </a>
+            </Link>
 
-            <a
-              href="mailto:collegegrahasthi@gmail.com"
+            <Link
+              to="mailto:collegegrahasthi@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="direct-contact"
@@ -88,12 +90,12 @@ const Footer = () => {
                 alt="mail"
               />
               <div>collegegrahasthi@gmail.com</div>
-            </a>
+            </Link>
           </div>
 
           <div className="social-div">
-            <a
-              href="https://www.instagram.com/collegegrahasthi/"
+            <Link
+              to="https://www.instagram.com/collegegrahasthi/"
               target="_blank"
               rel="noopener noreferrer"
               className="social"
@@ -103,10 +105,10 @@ const Footer = () => {
                 alt="mail"
               />
               <div>Instagram</div>
-            </a>
+            </Link>
 
-            <a
-              href="https://www.linkedin.com/company/collegegrahasthi"
+            <Link
+              to="https://www.linkedin.com/company/collegegrahasthi"
               target="_blank"
               rel="noopener noreferrer"
               className="social"
@@ -116,10 +118,14 @@ const Footer = () => {
                 alt="mail"
               />
               <div>LinkedIn</div>
-            </a>
+            </Link>
+           
+          
           </div>
+          <div>Made by - Vivek and Shishir</div>
         </div>
       </div>
+
     </div>
   );
 };

@@ -1,7 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 :root {
@@ -394,84 +411,13 @@ a img {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 8rem;
+  font-size: 6rem;
   line-height: 1;
   color: var(--primary);
   font-weight: 700;
   background-color: rgba(93, 169, 233, 0.3);
 }
 
-@media screen and (max-width: 640px) {
-  .nav {
-    justify-content: center;
-  }
-
-  .login {
-    display: none;
-  }
-
-  .hero-des .title h1 {
-    font-size: 3rem;
-  }
-
-  .banner {
-    flex-direction: column;
-  }
-
-  .banner .p {
-    font-size: 2rem;
-  }
-
-  .footer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .company-des {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .stars {
-    display: none;
-  }
-
-  .footer-des-card {
-    display: none;
-  }
-
-  .footer-des {
-    justify-content: center;
-  }
-
-  .contact {
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-  }
-
-  .social-div {
-    flex-direction: row;
-  }
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "Montserrat", sans-serif !important;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 .navbar {
   background-color: var(--primary) !important;
@@ -564,10 +510,115 @@ p {
   margin-top: 20px !important;
 }
 
-.hover-link {
-  transition: all 0.3s;
+.ant-calendar-picker {
+  width: auto !important;
 }
 
-.hover-link:hover {
-  background-color: var(--primary);
+.navbar-toggler {
+  border: 0px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+
+@media screen and (max-width: 640px) {
+  .nav {
+    padding: 0 3rem;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .hero-des .title .h1 {
+    font-size: 2rem;
+  }
+
+  .hero-des .title .p {
+    font-size: 1rem;
+  }
+
+  .banner {
+    flex-direction: column;
+  }
+
+  .banner .p {
+    font-size: 2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .company-des {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stars {
+    display: none;
+  }
+
+  .footer-des-card {
+    display: none;
+  }
+
+  .footer-des {
+    justify-content: center;
+  }
+
+  .contact {
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  .social-div {
+    flex-direction: row;
+  }
+
+  .coming-soon {
+    font-size: 3rem;
+  }
+
+  .ant-picker-panels { 
+    flex-direction: column;
+  } 
+}
+
+@media screen and (max-width: 375px) {
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .hero-points {
+    flex-direction: column;
+  }
+
+  .hero-des .title .h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-des .title .p {
+    font-size: 0.75rem;
+  }
+
+  .banner .p {
+    font-size: 1.5rem;
+  }
+
+  .company-des .h1 {
+    font-size: 1.25rem;
+  }
+
+
+  .coming-soon {
+    font-size: 2rem;
+  }
+
 }

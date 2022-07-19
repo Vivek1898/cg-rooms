@@ -113,7 +113,7 @@ function Homescreen() {
   return (
     <>
     <Navbar />
-    <div className="container">
+    <div className="container d-flex flex-column">
       <div className="row mt-5 bs align-items-center" style={{backgroundColor: "rgb(0, 63, 145)"}}>
         <div className="col-md-3">
           <RangePicker format="DD-MM-YYYY" onChange={filterByDate} />
@@ -131,6 +131,7 @@ function Homescreen() {
             onKeyUp={filterBySearch}
           />
         </div>
+
         <div className="col-md-3">
           <select
             className="form-control"
@@ -146,7 +147,8 @@ function Homescreen() {
           </select>
         </div>
       </div>
-      <h1>   Select Date for bookings</h1>
+
+      <h1 className="m-auto pt-5">Select Date for bookings</h1>
 
       <div className="row justify-content-center mt-5">
         {loading ? (

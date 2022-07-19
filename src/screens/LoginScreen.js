@@ -4,6 +4,7 @@ import { auth, googleAuthProvider, FacebookAuthProvider } from ".././firebase";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Navbar from "../components/Navbar";
+
 import { Button } from "antd";
 import { MailOutlined, GoogleOutlined } from "@ant-design/icons";
 import {
@@ -38,7 +39,8 @@ function LoginScreen() {
       console.log(result);
       localStorage.setItem("currentUser", JSON.stringify(result.user));
       localStorage.setItem("access_token", result.token);
-      window.location.href = "/home";
+      history.push("/home")
+      toast.success("Welcome " + result.user.name)
     } catch (error) {
       console.log(error);
       setError("Invalid Credentials");
@@ -68,7 +70,8 @@ function LoginScreen() {
         console.log(post.data.user);
         localStorage.setItem("currentUser", JSON.stringify(post.data.user));
         localStorage.setItem("access_token", post.data.token);
-        window.location.href = "/home";
+        history.push("/home")
+      toast.success("Welcome " + post.data.user.name)
       })
       .catch((err) => {
         console.log(err);
@@ -131,12 +134,23 @@ function LoginScreen() {
               >
                 Login with Google
               </Button>
+             <div style={{    backgroundColor: "rgb(0 0 0 / 80%)"}}>
+             <p className="text-center text-success p-3   ">
+         Not Yet registered?{" "}
+          <Link to="/register">
+            <a c>Register</a>
+            </Link>  
+          </p>
 
-              <p className="text-center text-danger">
+              <p className="text-center text-danger pb-3 ">
                 <Link to="/forgot-password">
                   <a className="text-danger"> Forgot password</a>
                 </Link>
-              </p>
+              </p>   
+             </div>
+          
+          
+            
             </div>
           </div>
         </div>
