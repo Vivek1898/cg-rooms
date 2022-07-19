@@ -34,7 +34,7 @@ function Bookingscreen({ match }) {
         setError("");
         setLoading(true);
         const data = (
-          await axios.post("/api/rooms/getroombyid", {
+          await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/getroombyid`, {
             roomid: match.params.roomid,
           })
         ).data;
@@ -115,7 +115,7 @@ function Bookingscreen({ match }) {
 
     try {
       setLoading(true);
-      const result = await axios.post("/api/bookings/bookroom", bookingDetails);
+      const result = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/bookings/bookroom`, bookingDetails);
       setLoading(false);
       Swal.fire(
         "Congratulations",

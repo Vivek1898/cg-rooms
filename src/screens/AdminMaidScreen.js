@@ -27,7 +27,7 @@ function AdminMaidScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/maid/getallmaids")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/maid/getallmaids`)).data;
       setMaid(data);
     } catch (error) {
       console.log(error);

@@ -37,7 +37,7 @@ function AdminBookingScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/maid/getallbookings")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/maid/getallbookings`)).data;
       setBookings(data);
     } catch (error) {
       console.log(error);

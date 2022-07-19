@@ -31,7 +31,7 @@ function GymBookingscreen({ match }) {
         setError("");
         setLoading(true);
         const data = (
-          await axios.post("/api/gym/getgymbyid", {
+          await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/getgymbyid`, {
             gymid: match.params.gymid,
           })
         ).data;
@@ -68,7 +68,7 @@ function GymBookingscreen({ match }) {
     try {
       setLoading(true);
       const result = await axios.post(
-        "/api/gymbooking/bookgym",
+        `${process.env.REACT_APP_GLOBAL_API}/api/gymbooking/bookgym`,
         bookingDetails
       );
       setLoading(false);

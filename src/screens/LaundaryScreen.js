@@ -28,7 +28,7 @@ function AdminMaidScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/laundary/getallaundary")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/laundary/getallaundary`)).data;
       setMaid(data);
       console.log(data);
     } catch (error) {
@@ -53,7 +53,7 @@ function AdminMaidScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = await axios.post("/api/laundary/booklaundary", {
+      const data = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/laundary/booklaundary`, {
         userid,
         x
       });

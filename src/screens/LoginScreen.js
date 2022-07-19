@@ -34,7 +34,7 @@ function LoginScreen() {
     };
     //console.log(user);
     try {
-      const result = (await axios.post("/api/users/login", user)).data;
+      const result = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/login`, user)).data;
       console.log(result);
       localStorage.setItem("currentUser", JSON.stringify(result.user));
       localStorage.setItem("access_token", result.token);
@@ -61,7 +61,7 @@ function LoginScreen() {
         console.log(user.displayName);
         const idTokenResult = await user.getIdTokenResult();
         console.log(user);
-        const post = await axios.post("/api/users/crateuser", {
+        const post = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/crateuser`, {
           email: user.email,
           dname: user.displayName,
         });

@@ -34,7 +34,7 @@ function AdminAddLaundaryScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/laundary/addlaundary", values)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/laundary/addlaundary`, values)).data;
       Swal.fire("Congratulations", "Your LaundaryAdded Successfully", "success");
       form.resetFields();
     } catch (error) {

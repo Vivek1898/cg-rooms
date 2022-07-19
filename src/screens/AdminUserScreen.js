@@ -195,7 +195,7 @@ function AdminUserScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/users/getallusers")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getallusers`)).data;
       setUsers(data);
     } catch (error) {
       console.log(error);

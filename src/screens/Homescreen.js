@@ -35,7 +35,7 @@ function Homescreen() {
       //  console.log(process.env.REACT_APP_STRIPE_KEY)
         setError("");
         setLoading(true);
-        const data = (await axios.get("/api/rooms/getallrooms")).data;
+        const data = (await axios.get(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/getallrooms`)).data;
         //console.log(data);
         setRooms(data);
         setDuplicateRooms(data);

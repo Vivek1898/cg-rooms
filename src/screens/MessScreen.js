@@ -34,7 +34,7 @@ function Homescreen() {
       try {
         setError("");
         setLoading(true);
-        const data = (await axios.get("/api/food/getallmess")).data;
+        const data = (await axios.get(`${process.env.REACT_APP_GLOBAL_API}/api/food/getallmess`)).data;
         //console.log(data);
         setRooms(data);
         setDuplicateRooms(data);

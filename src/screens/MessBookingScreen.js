@@ -31,7 +31,7 @@ function MessBookingscreen({ match }) {
         setError("");
         setLoading(true);
         const data = (
-          await axios.post("/api/food/getmessbyid", {
+          await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/food/getmessbyid`, {
             messid: match.params.messid,
           })
         ).data;
@@ -68,7 +68,7 @@ function MessBookingscreen({ match }) {
     try {
       setLoading(true);
       const result = await axios.post(
-        "/api/messbooking/bookmess",
+        `${process.env.REACT_APP_GLOBAL_API}/api/messbooking/bookmess`,
         bookingDetails
       );
       setLoading(false);

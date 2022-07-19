@@ -103,7 +103,7 @@ function AdminRoomScreen() {
     console.log(availablity);
 
     try {
-      const data = await axios.post("/api/rooms/updateavail", {
+      const data = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/updateavail`, {
         record,
         availablity,
       });
@@ -130,7 +130,7 @@ function AdminRoomScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/rooms/getallrooms")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/getallrooms`)).data;
       setRooms(data);
     } catch (error) {
       console.log(error);

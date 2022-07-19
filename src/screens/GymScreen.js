@@ -34,7 +34,7 @@ function Homescreen() {
       try {
         setError("");
         setLoading(true);
-        const data = (await axios.get("/api/gym/getallgym")).data;
+        const data = (await axios.get(`${process.env.REACT_APP_GLOBAL_API}/api/gym/getallgym`)).data;
         console.log(data);
         setRooms(data);
         setDuplicateRooms(data);
@@ -139,8 +139,8 @@ function Homescreen() {
             }}
           >
             <option value="all">All</option>
-            <option value="VEG">VEG</option>
-              <option value="NON-VEG">NON-VEG</option>
+            <option value="UNISEX">UNISEX</option>
+            
           </select>
         </div>
       </div>

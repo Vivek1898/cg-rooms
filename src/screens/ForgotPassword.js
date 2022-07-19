@@ -29,7 +29,7 @@ const ForgotPassword = () => {
     setLoading(true);
     setSent("");
     try {
-      const { data } = await axios.post("api/users/forgot-password", { email });
+      const { data } = await axios.post(`${process.env.REACT_APP_GLOBAL_API}api/users/forgot-password`, { email });
       console.log(data)
       setSuccess(true);
       toast("Check your email for the secret code");
@@ -47,7 +47,7 @@ const ForgotPassword = () => {
     // return;
     try {
       setLoading(true);
-      const { data } = await axios.post("api/users/reset-password", {
+      const { data } = await axios.post(`${process.env.REACT_APP_GLOBAL_API}api/users/reset-password`, {
         email,
         code,
         newPassword,

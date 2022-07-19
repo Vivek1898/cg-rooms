@@ -31,7 +31,7 @@ function AdminRoomScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/laundary/getallaundary")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/laundary/getallaundary`)).data;
       setRooms(data);
     } catch (error) {
       console.log(error);

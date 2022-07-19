@@ -32,7 +32,7 @@ function AdminRoomScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/gym/getallgym")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/getallgym`)).data;
       setRooms(data);
     } catch (error) {
       console.log(error);

@@ -34,7 +34,8 @@ function AdminAddRoomScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/gym/addgym", values)).data;
+      
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/addgym`, values)).data;
       Swal.fire("Congratulations", "Your Gym Added Successfully", "success");
       form.resetFields();
     } catch (error) {

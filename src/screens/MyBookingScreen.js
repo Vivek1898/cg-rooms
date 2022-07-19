@@ -18,7 +18,7 @@ function MyBookingScreen() {
     setLoading(true);
     try {
       const data = (
-        await axios.post("/api/bookings/getbookingbyuserid", {
+        await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/bookings/getbookingbyuserid`, {
           userid: user._id,
         })
       ).data;
@@ -39,7 +39,7 @@ function MyBookingScreen() {
     setLoading(true);
     try {
       const data = (
-        await axios.post("/api/bookings/cancelbooking", {
+        await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/bookings/cancelbooking`, {
           bookingid,
           roomid,
         })

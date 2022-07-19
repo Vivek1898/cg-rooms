@@ -29,7 +29,7 @@ function AdminMaidScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/maid/getallmaids")).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/maid/getallmaids`)).data;
 
       // for(x in data){
       //   let obj = x.currentbookings.find(o => o.name === user._id);
@@ -75,7 +75,7 @@ function AdminMaidScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = await axios.post("/api/maid/bookmaid", {
+      const data = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/maid/bookmaid`, {
         userid,
         x
       });

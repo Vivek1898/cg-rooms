@@ -34,7 +34,7 @@ function AdminAddRoomScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/food/addmess", values)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/food/addmess`, values)).data;
       Swal.fire("Congratulations", "Your Room Added Successfully", "success");
       form.resetFields();
     } catch (error) {
