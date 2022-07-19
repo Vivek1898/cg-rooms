@@ -21,7 +21,7 @@ import LaundaryScreen from "./screens/LaundaryScreen";
 import ComingSoon from "./screens/ComingSoon";
 import ForgotPassword from "./screens/ForgotPassword";
 import NotFound from "./screens/ComingSoon";
-
+import OwnerScreens from "./screens/OwnerScreens"
 
 function App() {
   return (
@@ -62,6 +62,8 @@ function App() {
         <Route path="/roomates" exact component={Findroommates} />
         <Route path="/comingsoon" exact component={ComingSoon} />
         <Route path="/forgot-password" exact component={ForgotPassword} />
+        <Route path="/owner" exact component={OwnerScreens} />
+   
         <Route  component={NotFound} />
       </Switch>
     </Router>

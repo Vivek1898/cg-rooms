@@ -115,7 +115,7 @@ function RegisterScreen() {
             {loading ? (
               <div>Registering... Please Wait...</div>
             ) : (
-              <button className="btn btn-primary mt-3 p-3" onClick={register} disabled={!submit}>
+              <button className="btn btn-primary mt-3 p-3" onClick={register} disabled={!email || !name  || !password || !cpassword}>
                 Register
               </button>
             )}

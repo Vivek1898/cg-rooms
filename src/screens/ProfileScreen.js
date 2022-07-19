@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import UserRoute from "../Routes/UserRoute";
 import MyMaidBookingScreen from "./MyMaidBookingScreen";
 import MyLaundaryBookingRoute from "./MyLaundaryBookingRoute"
+import { Link } from "react-router-dom";
 const { TabPane } = Tabs;
 
 function ProfileScreen() {
@@ -37,7 +38,15 @@ function ProfileScreen() {
                 <p>My Profile</p>
                 <p>Name : {user.name}</p>
                 <p>Email : {user.email}</p>
-              
+              {user && user.isOwner && 
+               <Link className="btn btn-success" to="/owner" style={{color:"fff",
+                backgroundColor: "#28a745",
+                borderColor: "#28a745"}}
+               
+               >
+                 Go to Owner Dashboard
+               </Link>
+              }
               </div>
             </div>
           </div>
