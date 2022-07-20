@@ -138,8 +138,8 @@ function Room({ room, fromDate, toDate }) {
             })}
           </Carousel> */}
     <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <h1>{room.name}</h1>
+      <h4 class="card-title">{room.name}</h4>
+    
         <b>
           <p>Availability: {room.maxcount}</p>
           <p>Phone Number : +91 7850037958</p>
