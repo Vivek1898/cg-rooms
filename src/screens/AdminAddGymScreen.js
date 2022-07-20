@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios";
 import { Form, Input, InputNumber, Button, Select } from "antd";
 
@@ -26,7 +26,7 @@ function AdminAddRoomScreen() {
   const [room, setRoom] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  const[Length,setLength]=useState("")
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
@@ -35,7 +35,7 @@ function AdminAddRoomScreen() {
     setLoading(true);
     try {
       
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/addgym`, values)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/addgym`, {values,Length})).data;
       Swal.fire("Congratulations", "Your Gym Added Successfully", "success");
       form.resetFields();
     } catch (error) {
@@ -46,6 +46,25 @@ function AdminAddRoomScreen() {
 
     setLoading(false);
   };
+
+  
+  async function fetchMyData() {
+    setError("");
+    setLoading(true);
+    try {
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/getallgym`)).data;
+      console.log(data.length)
+      setLength(data.length);
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchMyData();
+  }, []);
 
   const onReset = () => {
     form.resetFields();

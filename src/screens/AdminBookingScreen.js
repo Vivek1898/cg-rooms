@@ -16,6 +16,7 @@ function AdminBookingScreen() {
       dataIndex: "transactionid",
       key: "transactionid",
     },
+    { title: "Booked By", dataIndex: "cgId", key: "cgId" },
     { title: "uniqueId", dataIndex: "uniqueId", key: "uniqueId" },
     { title: "userid", dataIndex: "userid", key: "userid" },
     { title: "room", dataIndex: "room", key: "room" },
@@ -43,7 +44,7 @@ function AdminBookingScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/bookings/getallbookings`)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/bookings/getallbookings`,{tokenv:localStorage.getItem("access_token")})).data;
       setBookings(data);
     } catch (error) {
       console.log(error);

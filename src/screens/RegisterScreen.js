@@ -17,21 +17,48 @@ function RegisterScreen() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [submit, setSubmit] = useState(false);
+  const[cgId,setcgId]=useState("")
   const user = JSON.parse(localStorage.getItem("currentUser"));
   const history = useHistory();
   useEffect(() => {
     if(user!== null) history.push("home");
-   }, [user])
+   }, [user]);
+
+   async function fetchMyData() {
+    setError("");
+    setLoading(true);
+    try {
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getallusers`)).data;
+      console.log(data.length)
+    
+      const  og=Number(data.length)+Number(1);
+      const uid="CGUSER"+og
+      console.log(uid)
+         setcgId(uid)
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchMyData();
+  }, []);
+
 
   async function register() {
     if (password === cpassword) {
+
       const user = {
         name,
         email,
         password,
         cpassword,
+        cgId,
       };
-      //console.log(user);
+      console.log(user);
+   
       setLoading(true);
       setError("");
       setSuccess("");

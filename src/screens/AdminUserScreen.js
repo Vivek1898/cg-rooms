@@ -65,6 +65,60 @@ function AdminUserScreen() {
       },
     
     },
+
+    { title: "CG ID", dataIndex: "cgId", key: "cgId" ,
+  
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters,
+    }) => {
+      return (
+        <>
+          <Input
+            autoFocus
+            placeholder="Type text here"
+            value={selectedKeys[0]}
+            onChange={(e) => {
+              setSelectedKeys(e.target.value ? [e.target.value] : []);
+              confirm({ closeDropdown: false });
+            }}
+            onPressEnter={() => {
+              confirm();
+            }}
+            onBlur={() => {
+              confirm();
+            }}
+          ></Input>
+          <Button
+            onClick={() => {
+              confirm();
+            }}
+            type="primary"
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => {
+              clearFilters();
+            }}
+            type="danger"
+          >
+            Reset
+          </Button>
+        </>
+      );
+    },
+    filterIcon: () => {
+      return <SearchOutlined />;
+    },
+    onFilter: (value, record) => {
+      if(record.cgId)
+      return record.cgId.toLowerCase().includes(value.toLowerCase());;
+    },
+  
+  },
     {
       title: "name",
       dataIndex: "name",
@@ -168,7 +222,7 @@ function AdminUserScreen() {
         return <SearchOutlined />;
       },
       onFilter: (value, record) => {
-        return record.name.toLowerCase().includes(value.toLowerCase());
+        return record.email.toLowerCase().includes(value.toLowerCase());
       },
     },
 
@@ -195,7 +249,7 @@ function AdminUserScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getallusers`)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getallusers`,{tokenv:localStorage.getItem("access_token")})).data;
       setUsers(data);
     } catch (error) {
       console.log(error);

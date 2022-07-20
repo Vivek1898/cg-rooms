@@ -38,6 +38,7 @@ function ProfileScreen() {
                 <p>My Profile</p>
                 <p>Name : {user.name}</p>
                 <p>Email : {user.email}</p>
+                {user && user.cgId &&  <p>UserId : {user.cgId}</p> }
               {user && user.isOwner && 
                <Link className="btn btn-success" to="/owner" style={{color:"fff",
                 backgroundColor: "#28a745",

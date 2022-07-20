@@ -96,14 +96,14 @@ function MyBookingScreen() {
    try{
     setLoading(true);
      //If there any api exist server will target backend through proxy
-    const {data}=await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/owner/ownerroom`,{
+    const {data}=await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/owner/getbookingbyuserid`,{
       uniqueId
     });
     console.log(data.length);
     if(data.length===0){
-        toast.error("Room Not Found")
+        toast.error("No Bookings Found For Mess")
     }else{
-        toast.success("Room Found SucessFully")
+        toast.success("Mess Bookings Found SucessFully")
     }
     setLoading(false);
     setRoomBookings(data);
@@ -129,7 +129,7 @@ function MyBookingScreen() {
             className="form-control mb-4 p-4"
             value={uniqueId}
             onChange={(e) => setUniqueId(e.target.value)}
-            placeholder="Enter Room Id"
+            placeholder="Enter Mess Id"
             required
           />
 

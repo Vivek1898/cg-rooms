@@ -26,7 +26,7 @@ function AdminAddRoomScreen() {
   const [room, setRoom] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  const[Length,setLength]=useState("")
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
@@ -34,7 +34,7 @@ function AdminAddRoomScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/food/addmess`, values)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/food/addmess`, {values,Length})).data;
       Swal.fire("Congratulations", "Your Mess Added Successfully", "success");
       form.resetFields();
     } catch (error) {
@@ -45,6 +45,28 @@ function AdminAddRoomScreen() {
 
     setLoading(false);
   };
+
+
+
+
+  async function fetchMyData() {
+    setError("");
+    setLoading(true);
+    try {
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/food/getallmess`)).data;
+      console.log(data.length)
+      setLength(data.length);
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchMyData();
+  }, []);
+
 
   const onReset = () => {
     form.resetFields();

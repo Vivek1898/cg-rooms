@@ -26,7 +26,7 @@ function AdminAddRoomScreen() {
   const [room, setRoom] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+const[Length,setLength]=useState("")
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
@@ -34,7 +34,7 @@ function AdminAddRoomScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/addroom`, values)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/addroom`, {values ,Length ,tokenv:localStorage.getItem("access_token")})).data;
       Swal.fire("Congratulations", "Your Room Added Successfully", "success");
       form.resetFields();
     } catch (error) {
@@ -49,6 +49,24 @@ function AdminAddRoomScreen() {
   const onReset = () => {
     form.resetFields();
   };
+
+  async function fetchMyData() {
+    setError("");
+    setLoading(true);
+    try {
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/getallrooms`)).data;
+      console.log(data.length)
+      setLength(data.length);
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchMyData();
+  }, []);
 
   return (
     <div className="row">

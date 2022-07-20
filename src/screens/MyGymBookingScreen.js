@@ -78,6 +78,13 @@ function MyBookingScreen() {
                       <b>BookingId:</b> {booking._id}
                     </p>
                     <p>
+                      <b>GymId:</b> {booking.uniqueId}
+                    </p>
+                    <p>
+                      <b>UserId:</b> {booking.cgId}
+                    </p>
+
+                    <p>
                       <b>CheckIn:</b> {booking.fromdate}
                     </p>
                     <p>

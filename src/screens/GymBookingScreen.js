@@ -58,6 +58,7 @@ function GymBookingscreen({ match }) {
     const bookingDetails = {
       room,
       userid: JSON.parse(localStorage.getItem("currentUser"))._id,
+      cgId: JSON.parse(localStorage.getItem("currentUser")).cgId,
       fromdate,
       todate,
       totalAmount,

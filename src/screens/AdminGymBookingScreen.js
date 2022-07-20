@@ -16,6 +16,7 @@ function AdminBookingScreen() {
       dataIndex: "transactionid",
       key: "transactionid",
     },
+    { title: "Booked By", dataIndex: "cgId", key: "cgId" },
     { title: "uniqueId", dataIndex: "uniqueId", key: "uniqueId" },
     { title: "gymid", dataIndex: "gymid", key: "gymid" },
     { title: "gym", dataIndex: "gym", key: "gym" },
