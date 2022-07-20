@@ -28,10 +28,10 @@ function RegisterScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getallusers`)).data;
-      console.log(data.length)
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getalluserslength`)).data;
+      console.log(data.data)
     
-      const  og=Number(data.length)+Number(1);
+      const  og=Number(data.data)+Number(3);
       const uid="CGUSER"+og
       console.log(uid)
          setcgId(uid)

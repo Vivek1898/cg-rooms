@@ -23,7 +23,7 @@ function LoginScreen() {
   const [error, setError] = useState("");
   const [submit, setSubmit] = useState(false);
   const user = JSON.parse(localStorage.getItem("currentUser"));
-
+  const[cgId,setcgId]=useState("")
   useEffect(() => {
     if (user !== null) history.push("home");
   }, [user]);
@@ -54,6 +54,30 @@ function LoginScreen() {
     }
   };
 
+  async function fetchMyData() {
+    setError("");
+    setLoading(true);
+    try {
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getalluserslength`)).data;
+      console.log(data.data)
+    
+      const  og=Number(data.data)+Number(3);
+      const uid="CGUSER"+og
+      console.log(uid)
+         setcgId(uid)
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    fetchMyData();
+  }, []);
+
+
+
   const googleLogin = async () => {
     auth
       .signInWithPopup(googleAuthProvider)
@@ -66,6 +90,7 @@ function LoginScreen() {
         const post = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/crateuser`, {
           email: user.email,
           dname: user.displayName,
+          cgId:cgId
         });
         console.log(post.data.user);
         localStorage.setItem("currentUser", JSON.stringify(post.data.user));
