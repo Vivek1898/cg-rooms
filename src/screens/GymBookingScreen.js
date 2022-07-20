@@ -111,7 +111,7 @@ function GymBookingscreen({ match }) {
         <div className="row justify-content-center mt-5 bs">
           <div className="col-md-6">
             <h1>{room.name}</h1>
-            <img src={room.imageurls[0]} alt="" className="bigimg" />
+            <img src={room.imageurls[0]} alt="" className="bigimg" style={{"width":"100%"}} />
           </div>
           <div className="col-md-6">
             <div style={{ textAlign: "right" }}>
