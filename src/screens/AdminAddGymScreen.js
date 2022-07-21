@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import axios from "axios";
 import { Form, Input, InputNumber, Button, Select } from "antd";
-
+import FileUpload from "../components/FileUpload"
 import Swal from "sweetalert2";
 
 import Loader from "../components/Loader";
@@ -20,6 +20,21 @@ const tailLayout = {
     span: 16,
   },
 };
+
+const initialState = {
+
+  images: [
+   
+  ],
+
+};
+const emptyState = {
+
+  images: [
+   
+  ],
+
+};
 function AdminAddRoomScreen() {
   const { Option } = Select;
 
@@ -28,7 +43,9 @@ function AdminAddRoomScreen() {
   const [error, setError] = useState("");
   const[Length,setLength]=useState("")
   const [form] = Form.useForm();
-
+  const [Imagevalues, setImagevalues] = useState(initialState);
+  const [visible, setVisible] = useState(false);
+  const[loadingDelete,setLoadingDelete]=useState(false);
   const onFinish = async (values) => {
     console.log(values);
     setError("");
@@ -38,6 +55,7 @@ function AdminAddRoomScreen() {
       const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/addgym`, {values,Length})).data;
       Swal.fire("Congratulations", "Your Gym Added Successfully", "success");
       form.resetFields();
+      setImagevalues(emptyState);
     } catch (error) {
       console.log(error);
       setError(error);
@@ -71,7 +89,25 @@ function AdminAddRoomScreen() {
   };
 
   return (
-    <div className="row">
+   <>
+   
+   <div className="p-3">
+            <FileUpload
+            className="p-3"
+              Imagevalues={Imagevalues}
+              setImagevalues={setImagevalues}
+              loadingDelete={loadingDelete}
+              setLoadingDelete={setLoadingDelete}
+              visible={visible}
+              setVisible={setVisible}
+       
+            />
+          </div>
+
+
+
+   
+   <div className="row">
       {loading ? (
         <Loader></Loader>
       ) : error.length > 0 ? (
@@ -181,7 +217,7 @@ function AdminAddRoomScreen() {
                 },
               ]}
             >
-              <Select placeholder="Select a room type" allowClear>
+              <Select placeholder="Select a Gym  type" allowClear>
                 <Option value="UNISEX">UNISEX</Option>
             
               </Select>
@@ -198,6 +234,7 @@ function AdminAddRoomScreen() {
         </div>
       )}
     </div>
+   </>
   );
 }
 
