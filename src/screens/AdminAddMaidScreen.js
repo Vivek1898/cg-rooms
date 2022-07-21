@@ -30,7 +30,7 @@ function AdminAddMaidScreen() {
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
-    console.log(values);
+  //  console.log(values);
     setError("");
     setLoading(true);
     try {

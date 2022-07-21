@@ -30,7 +30,7 @@ const ForgotPassword = () => {
     setSent("");
     try {
       const { data } = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/forgot-password`, { email });
-      console.log(data)
+     // console.log(data)
       setSuccess(true);
       toast("Check your email for the secret code");
       setLoading(false);

@@ -37,7 +37,7 @@ function AdminScreen() {
     <Navbar />
     <AdminRoute><div className="ml-3 mt-3 mr-3 bs">
       <h1 className="text-center">Admin Panel</h1>
-      <Tabs defaultActiveKey="1" onChange={callback}>
+      <Tabs defaultActiveKey="1" >
         <TabPane tab="Bookings" key="1">
           <AdminBookingScreen></AdminBookingScreen>
         </TabPane>

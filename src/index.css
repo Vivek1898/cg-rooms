@@ -455,7 +455,7 @@ h1 {
 }
 
 .btn {
-  background-color: black !important;
+  background-color: rgb(0, 63, 145) !important;
   color: white !important;
   box-shadow: none !important;
 }
@@ -470,8 +470,8 @@ h1 {
 .bigimg {
   height: 400px;
   border-radius: 5px !important;
-  /* width: 100% !important;
-  border-radius: 5px !important; */
+  /* width: 100% !important; */
+  /* border-radius: 5px !important; */
 }
 
 input,

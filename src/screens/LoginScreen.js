@@ -36,7 +36,7 @@ function LoginScreen() {
     //console.log(user);
     try {
       const result = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/login`, user)).data;
-      console.log(result);
+     // console.log(result);
       localStorage.setItem("currentUser", JSON.stringify(result.user));
       localStorage.setItem("access_token", result.token);
       history.push("/home")
@@ -59,11 +59,11 @@ function LoginScreen() {
     setLoading(true);
     try {
       const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getalluserslength`)).data;
-      console.log(data.data)
+    //  console.log(data.data)
     
       const  og=Number(data.data)+Number(3);
       const uid="CGUSER"+og
-      console.log(uid)
+   //   console.log(uid)
          setcgId(uid)
     } catch (error) {
       console.log(error);
@@ -83,16 +83,16 @@ function LoginScreen() {
       .signInWithPopup(googleAuthProvider)
       .then(async (result) => {
         const { user } = result;
-        console.log(user.email);
-        console.log(user.displayName);
+      //  console.log(user.email);
+      //  console.log(user.displayName);
         const idTokenResult = await user.getIdTokenResult();
-        console.log(user);
+      //  console.log(user);
         const post = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/crateuser`, {
           email: user.email,
           dname: user.displayName,
           cgId:cgId
         });
-        console.log(post.data.user);
+      // console.log(post.data.user);
         localStorage.setItem("currentUser", JSON.stringify(post.data.user));
         localStorage.setItem("access_token", post.data.token);
         history.push("/home")

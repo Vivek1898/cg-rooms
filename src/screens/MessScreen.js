@@ -76,7 +76,7 @@ function Homescreen() {
   }
   function filterByType(type) {
     setType(type);
-    console.log(type);
+  //  console.log(type);
     if (type !== "all") {
       const tempRooms = duplicateRooms.filter(
         (x) => x.type.toLowerCase() === type.toLowerCase()

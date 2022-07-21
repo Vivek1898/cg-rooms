@@ -240,7 +240,7 @@ function AdminUserScreen() {
         </>
       ),
     },
-
+    { title: "mobile", dataIndex: "mobile", key: "mobile" },
 
 
   ];

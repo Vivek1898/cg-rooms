@@ -30,13 +30,16 @@ function ProfileScreen() {
     <Navbar />
     <UserRoute>
     {user && <div className="ml-3 mt-3">
-      <Tabs defaultActiveKey="1" onChange={callback}>
+      <Tabs defaultActiveKey="1" onChange={callback} >
         <TabPane tab="Profile" key="1">
           <div className="row">
             <div className="col-xs-12 ml-5 mb-5">
               <div className="bs">
                 <p>My Profile</p>
                 <p>Name : {user.name}</p>
+                <p>Email : {user.email}</p>
+
+                {user.mobile &&  <p>Mobile : {user.mobile}</p> }
                 <p>Email : {user.email}</p>
                 {user && user.cgId &&  <p>UserId : {user.cgId}</p> }
               {user && user.isOwner && 

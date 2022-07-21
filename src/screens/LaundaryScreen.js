@@ -42,9 +42,9 @@ function AdminMaidScreen() {
   }, []);
 
   async function onEditStudent(x){
-    console.log(x);
+   // console.log(x);
 
-  console.log(user._id)
+ // console.log(user._id)
   const userid=user._id
 
  
@@ -57,7 +57,7 @@ function AdminMaidScreen() {
         userid,
         x
       });
-      console.log(data);
+     // console.log(data);
      toast.success("Laundary Booked SuccessFully");
      fetchMyData();
     } catch (error) {

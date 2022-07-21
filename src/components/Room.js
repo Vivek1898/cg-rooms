@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-
 import { Modal, Button, Carousel } from "react-bootstrap";
-import {  Link } from "react-router-dom";
-import { Card,Avatar } from 'antd';
-
-
-import { Row, Col } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { Link } from "react-router-dom";
+import { Card, Avatar } from "antd";
+import { Row, Col } from "antd";
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 const { Meta } = Card;
 
 function Room({ room, fromDate, toDate }) {
@@ -19,12 +20,10 @@ function Room({ room, fromDate, toDate }) {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
   return (
-    
     <div>
-     
       {/* <div className="col-md-4">
         <img src={room.imageurls[0]} className="smallimg" alt="" />
       </div>
@@ -49,7 +48,7 @@ function Room({ room, fromDate, toDate }) {
         </div>
       </div> */}
 
-{/* <Row gutter={16}>
+      {/* <Row gutter={16}>
         <Col className="gutter-row" span={8}>
         <Card
           cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
@@ -75,8 +74,7 @@ function Room({ room, fromDate, toDate }) {
       
         </Row> */}
 
-
-{/* 
+      {/* 
 <div class="card-deck container-fluid">
   <div class="card">
   <Carousel prevLabel="" nextLabel="">
@@ -118,13 +116,22 @@ function Room({ room, fromDate, toDate }) {
   </div>
   
 </div> */}
-  
 
- <div class="card-deck p-2">
-  <div class="card p-2">
-  <img src={room.imageurls[0]} className="smallimg" alt="" />
+      <div class="card-deck p-2">
+        <div class="card p-2" style={{width: "20rem"}}>
+          <Carousel>
+            {
+              room.imageurls.map((url) => {
+                return (
+                  <Carousel.Item>
+                    <img src={url} className="smallimg" />
+                  </Carousel.Item>
+                )
+              })
+            }
+          </Carousel>
 
-  {/* <Carousel  >
+          {/* <Carousel  >
             {room.imageurls.map((url) => {
               return (
                 <Carousel.Item >
@@ -137,33 +144,29 @@ function Room({ room, fromDate, toDate }) {
               );
             })}
           </Carousel> */}
-    <div class="card-body">
-      <h4 class="card-title">{room.name}</h4>
-    
-        <b>
-          <p>Availability: {room.maxcount}</p>
-          <p>Phone Number : +91 7850037958</p>
-          <p>Type : {room.type}</p>
-        </b>
-    </div>
+          <div class="card-body">
+            <h4 class="card-title">{room.name}</h4>
 
-            <div style={{ float: "right" }} >
-          {fromDate && toDate && (
-            <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
-              <button className="btn btn-primary mb-2 mr-2">Book Now</button>
-            </Link>
-          )}
+            <b>
+              <p>Availability: {room.maxcount}</p>
+              <p>Phone Number : +91 7850037958</p>
+              <p>Type : {room.type}</p>
+            </b>
+          </div>
 
-          <button className="btn btn-primary mb-2 mr-2" onClick={handleShow}>
-            View Detail
-          </button>
+          <div style={{ float: "right" }}>
+            {fromDate && toDate && (
+              <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
+                <button className="btn btn-primary mb-2 mr-2">Book Now</button>
+              </Link>
+            )}
+
+            <button className="btn btn-primary mb-2 mr-2" onClick={handleShow}>
+              View Detail
+            </button>
+          </div>
         </div>
-  </div>
-  
-</div> 
-
-
-
+      </div>
 
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header>

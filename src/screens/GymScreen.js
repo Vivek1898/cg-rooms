@@ -35,7 +35,7 @@ function Homescreen() {
         setError("");
         setLoading(true);
         const data = (await axios.get(`${process.env.REACT_APP_GLOBAL_API}/api/gym/getallgym`)).data;
-        console.log(data);
+      //  console.log(data);
         setRooms(data);
         setDuplicateRooms(data);
       } catch (error) {

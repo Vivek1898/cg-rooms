@@ -53,7 +53,7 @@ function AdminAddRoomScreen() {
     setLoading(true);
     try {
       const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/gym/getallgym`)).data;
-      console.log(data.length)
+     // console.log(data.length)
       setLength(data.length);
     } catch (error) {
       console.log(error);

@@ -18,7 +18,7 @@ const AdminRoute = ({ children }) => {
         const tt=localStorage.getItem("access_token");
         console.log(tt)
       const { data } = await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/current-admin`,{tokenv:localStorage.getItem("access_token")});
-         console.log(data);
+        // console.log(data);
       if (data.ok) setOk(true);
     } catch (err) {
       console.log(err);
