@@ -9,30 +9,47 @@ function Mess({ room, fromDate, toDate }) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="row bs">
-      <div className="col-md-4">
-        <img src={room.imageurls[0]} className="smallimg" alt="" />
-      </div>
-      <div className="col-md-7">
-        <h1>{room.name}</h1>
-        <b>
-          <p>Availablity : {room.maxcount}</p>
-          <p>Phone Number : +91 7850037958</p>
-          <p>Type : {room.type}</p>
-        </b>
+    <div>
+
+
+    <div class="card-deck p-2">
+      <div class="card p-2" style={{width: "20rem"}}>
+        <Carousel>
+          {
+            room.imageurls.map((url) => {
+              return (
+                <Carousel.Item>
+                  <img src={url} className="smallimg" />
+                </Carousel.Item>
+              )
+            })
+          }
+        </Carousel>
+
+        <div class="card-body">
+          <h4 class="card-title">{room.name}</h4>
+
+          <b>
+            <p>Availability: {room.maxcount}</p>
+            <p>Phone Number : +91 7850037958</p>
+            <p>Type : {room.type}</p>
+          </b>
+        </div>
 
         <div style={{ float: "right" }}>
           {fromDate && toDate && (
             <Link to={`/bookmess/${room._id}/${fromDate}/${toDate}`}>
-              <button className="btn btn-primary m-2">Book Now</button>
+              <button className="btn btn-primary mb-2 mr-2">Book Now</button>
             </Link>
           )}
 
-          <button className="btn btn-primary" onClick={handleShow}>
+          <button className="btn btn-primary mb-2 mr-2" onClick={handleShow}>
             View Detail
           </button>
         </div>
       </div>
+    </div>
+
 
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header>

@@ -24,98 +24,7 @@ function Room({ room, fromDate, toDate }) {
   };
   return (
     <div>
-      {/* <div className="col-md-4">
-        <img src={room.imageurls[0]} className="smallimg" alt="" />
-      </div>
-      <div className="col-md-7 ">
-        <h1>{room.name}</h1>
-        <b>
-          <p>Availability: {room.maxcount}</p>
-          <p>Phone Number : +91 7850037958</p>
-          <p>Type : {room.type}</p>
-        </b>
 
-        <div style={{ float: "right" }} >
-          {fromDate && toDate && (
-            <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
-              <button className="btn btn-primary mb-2 mr-2">Book Now</button>
-            </Link>
-          )}
-
-          <button className="btn btn-primary mb-2 mr-2" onClick={handleShow}>
-            View Detail
-          </button>
-        </div>
-      </div> */}
-
-      {/* <Row gutter={16}>
-        <Col className="gutter-row" span={8}>
-        <Card
-          cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-          actions={[  <SettingOutlined key="setting" />,
-          <EditOutlined key="edit" />,
-          <EllipsisOutlined key="ellipsis" />,]}
-        >
-           <h1>{room.name}</h1>
-        <b>
-          <p>Availability: {room.maxcount}</p>
-          <p>Phone Number : +91 7850037958</p>
-          <p>Type : {room.type}</p>
-</b>
-
-          <Meta
-            avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-            title="Card title"
-            description="This is the description"
-          />
-        </Card>
-        </Col>
-
-      
-        </Row> */}
-
-      {/* 
-<div class="card-deck container-fluid">
-  <div class="card">
-  <Carousel prevLabel="" nextLabel="">
-            {room.imageurls.map((url) => {
-              return (
-                <Carousel.Item   >
-                  <img
-                
-                    className="d-block  smallimg"
-                    src={url}
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              );
-            })}
-          </Carousel>
- 
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <h1>{room.name}</h1>
-        <b>
-          <p>Availability: {room.maxcount}</p>
-          <p>Phone Number : +91 7850037958</p>
-          <p>Type : {room.type}</p>
-        </b>
-    </div>
-
-            <div style={{ float: "right" }} >
-          {fromDate && toDate && (
-            <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
-              <button className="btn btn-primary mb-2 mr-2">Book Now</button>
-            </Link>
-          )}
-
-          <button className="btn btn-primary mb-2 mr-2" onClick={handleShow}>
-            View Detail
-          </button>
-        </div>
-  </div>
-  
-</div> */}
 
       <div class="card-deck p-2">
         <div class="card p-2" style={{width: "20rem"}}>
@@ -131,19 +40,6 @@ function Room({ room, fromDate, toDate }) {
             }
           </Carousel>
 
-          {/* <Carousel  >
-            {room.imageurls.map((url) => {
-              return (
-                <Carousel.Item >
-                  <img
-                    className="d-block w-100 smallimg"
-                    src={url}
-                    alt="First slide"
-                  />
-                </Carousel.Item>
-              );
-            })}
-          </Carousel> */}
           <div class="card-body">
             <h4 class="card-title">{room.name}</h4>
 

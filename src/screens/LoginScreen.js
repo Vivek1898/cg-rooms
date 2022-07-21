@@ -61,9 +61,9 @@ function LoginScreen() {
       const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/users/getalluserslength`)).data;
     //  console.log(data.data)
     
-      const  og=Number(data.data)+Number(3);
+      const  og=Number(data.data)+Number(2);
       const uid="CGUSER"+og
-   //   console.log(uid)
+     console.log(uid)
          setcgId(uid)
     } catch (error) {
       console.log(error);

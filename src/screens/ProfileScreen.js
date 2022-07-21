@@ -40,7 +40,7 @@ function ProfileScreen() {
                 <p>Email : {user.email}</p>
 
                 {user.mobile &&  <p>Mobile : {user.mobile}</p> }
-                <p>Email : {user.email}</p>
+  
                 {user && user.cgId &&  <p>UserId : {user.cgId}</p> }
               {user && user.isOwner && 
                <Link className="btn btn-success" to="/owner" style={{color:"fff",
