@@ -34,7 +34,7 @@ function AdminAddMaidScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/maid/addmaid`, values)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/maid/addmaid`, {values,tokenv:localStorage.getItem("access_token")})).data;
       Swal.fire("Congratulations", "Your Maid Added Successfully", "success");
       form.resetFields();
     } catch (error) {

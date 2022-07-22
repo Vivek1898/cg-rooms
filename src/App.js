@@ -63,8 +63,9 @@ function App() {
         <Route path="/comingsoon" exact component={ComingSoon} />
         <Route path="/forgot-password" exact component={ForgotPassword} />
         <Route path="/owner" exact component={OwnerScreens} />
+    
 
-   
+   //ss
         <Route  component={NotFound} />
       </Switch>
     </Router>

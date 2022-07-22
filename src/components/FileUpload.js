@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import Resizer from "react-image-file-resizer";
 import axios from "axios";
 import { LoadingOutlined } from "@ant-design/icons";
-import { CopyOutlined ,DeleteOutlined} from '@ant-design/icons';
+import { CopyOutlined ,DeleteFilled} from '@ant-design/icons';
 import { Avatar, Badge,Tag,Input,Tooltip,Button,Image,Typography  } from "antd";
 const { Paragraph,Text,Link } = Typography;
-const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelete,visible,setVisible}) => {
+const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelete,visible,setVisible,Images,setImages}) => {
 
  
   const fileUploadAndResize = (e) => {
@@ -14,7 +14,7 @@ const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelet
     // resize
     let files = e.target.files; // 3
     let allUploadedFiles = Imagevalues.images;
-
+ let temp=Images
 
     if (files) {
       setLoadingDelete(true);
@@ -38,9 +38,10 @@ const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelet
                 console.log("IMAGE UPLOAD RES DATA", res);
                 setLoadingDelete(false);
                 allUploadedFiles.push(res.data);
-     
+                 temp.push(res.data.url)
+                setImages( temp);
                 setImagevalues({ ...Imagevalues, images: allUploadedFiles });
-                console.log(Imagevalues)
+                console.log(Images)
               })
               .catch((err) => {
                 setLoadingDelete(false);
@@ -58,6 +59,8 @@ const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelet
   const handleImageRemove = (public_id) => {
     setLoadingDelete(true);
     // console.log("remove image", public_id);
+
+   let temp=Images
     axios
       .post(
         `${process.env.REACT_APP_GLOBAL_API}/api/upload/removeimage`,
@@ -70,7 +73,20 @@ const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelet
         let filteredImages = images.filter((item) => {
           return item.public_id !== public_id;
         });
+      
         setImagevalues({ ...Imagevalues, images: filteredImages });
+        console.log(filteredImages);
+
+      temp.splice(0, temp.length);
+      setImages(temp)
+       
+        filteredImages.forEach((x, i) =>temp.push(x.url));
+        console.log("temop => " )
+        console.log(temp)
+        setImages( temp);
+        temp.splice(0, temp.length);
+        console.log("Images => ")
+        console.log(Images)
       })
       .catch((err) => {
         console.log(err);
@@ -84,13 +100,14 @@ const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelet
    
       {!loadingDelete ?(  Imagevalues.images &&
           Imagevalues.images.map((image) => (
-            <div
+            <Badge
              
               key={image.public_id}
              
               style={{ cursor: "pointer" }}
             >
                  <Image
+                 className="m-1 p-1"
         preview={visible}
         width={200}
         src={image.url}
@@ -100,14 +117,18 @@ const FileUpload = ({ Imagevalues, setImagevalues, loadingDelete,setLoadingDelet
             <LoadingOutlined className="text-danger h1" />
           ) : (
     
-<Button  icon={<DeleteOutlined />}    onClick={() => handleImageRemove(image.public_id)}>Delete</Button>
+<Button  icon={<DeleteFilled />} 
+    className="text-danger " 
+   onClick={() => handleImageRemove(image.public_id)}
+   style={{display:"flex"}}
+   >Delete</Button>
           )}
 
 
-<Text copyable code>{image.url}</Text>
+{/* <Text copyable code>{image.url}</Text> */}
 
      
-            </div>
+            </Badge>
 
           ))):(
 

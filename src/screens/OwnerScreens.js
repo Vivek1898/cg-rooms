@@ -29,7 +29,18 @@ function ProfileScreen() {
     <Navbar />
     <OwnerRoute>
  <div className="ml-3 mt-3">
-    {user && user.isRoomOwner && <Tabs defaultActiveKey="1" onChange={callback}>
+
+ <Tabs
+        defaultActiveKey="1"
+    
+        style={{
+          marginBottom: 32,
+        }}
+      >
+    {user && user.isRoomOwner &&      <TabPane tab="Tab 1" key="1">
+       
+    
+    <Tabs defaultActiveKey="1" type="card" onChange={callback}>
         <TabPane tab="Profile" key="1">
          <div>
          <h1 className="jumbotron text-center bg-primary square">Room Owner Dashboard</h1>
@@ -48,6 +59,8 @@ function ProfileScreen() {
         </div>
          </div>
         </TabPane>
+
+
         
         <TabPane tab="Update Room" key="2">
           <OwnerUpdateScreen></OwnerUpdateScreen>
@@ -57,15 +70,11 @@ function ProfileScreen() {
         </TabPane>
       
         
-      </Tabs>}  
-
-
-
-    </div>
-<div>
-  
-
-{user && user.isMessOwner && <Tabs defaultActiveKey="4" onChange={callback}>
+      </Tabs>
+        </TabPane>}  
+        {user && user.isMessOwner &&     <TabPane tab="Tab 2" key="4">
+       
+ <Tabs defaultActiveKey="4" onChange={callback}>
         <TabPane tab="Profile" key="4">
          <div>
          <h1 className="jumbotron text-center bg-primary square">Mess Owner Dashboard</h1>
@@ -90,13 +99,10 @@ function ProfileScreen() {
         </TabPane>
       
         
-      </Tabs>}  
-</div>
-    
-    <div>
-      
-      
-    {user && user.isGymOwner && <Tabs defaultActiveKey="6" onChange={callback}>
+      </Tabs>
+        </TabPane>}  
+        {user && user.isGymOwner &&    <TabPane tab="Tab 3" key="6">
+    <Tabs defaultActiveKey="6" onChange={callback}>
         <TabPane tab="Profile" key="6">
          <div>
          <h1 className="jumbotron text-center bg-primary square">Gym Owner Dashboard</h1>
@@ -121,8 +127,15 @@ function ProfileScreen() {
         </TabPane>
       
         
-      </Tabs>}  
+      </Tabs>
+        </TabPane>}  
+      </Tabs>
+
+
+
+
     </div>
+
     </OwnerRoute>
   
     </>

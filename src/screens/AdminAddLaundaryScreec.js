@@ -45,6 +45,7 @@ function AdminAddLaundaryScreen() {
   const [Imagevalues, setImagevalues] = useState(initialState);
   const [visible, setVisible] = useState(false);
   const[loadingDelete,setLoadingDelete]=useState(false);
+  const [Images,setImages]=useState([]);
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
@@ -52,10 +53,12 @@ function AdminAddLaundaryScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/laundary/addlaundary`, values)).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/laundary/addlaundary`,{Images, values,tokenv:localStorage.getItem("access_token")})).data;
       Swal.fire("Congratulations", "Your Laundary Added Successfully", "success");
       form.resetFields();
       setImagevalues(emptyState)
+      setImages(Images.splice(0, Images.length))
+      window.location.reload();
 
     } catch (error) {
       console.log(error);
@@ -82,6 +85,8 @@ function AdminAddLaundaryScreen() {
               setLoadingDelete={setLoadingDelete}
               visible={visible}
               setVisible={setVisible}
+              Images={Images}
+              setImages={setImages}
        
             />
           </div>
@@ -153,39 +158,7 @@ function AdminAddLaundaryScreen() {
             >
               <InputNumber min={1} defaultChecked={1} />
             </Form.Item>
-            <Form.Item
-              name="imageurl1"
-              label="imageurl1"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              name="imageurl2"
-              label="imageurl2"
-              rules={[
-                {
-                  //required: true,
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              name="imageurl3"
-              label="imageurl3"
-              rules={[
-                {
-                  //required: true,
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
+          
 
             <Form.Item {...tailLayout}>
               <Button type="success" htmlType="submit">

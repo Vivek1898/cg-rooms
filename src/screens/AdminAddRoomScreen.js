@@ -36,6 +36,7 @@ const initialState = {
   };
 
 
+
 function AdminAddRoomScreen() {
   const { Option } = Select;
   
@@ -57,11 +58,15 @@ const[loadingDelete,setLoadingDelete]=useState(false);
         setError("");
         setLoading(true);
         
-      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/addroom`, {values ,Length ,tokenv:localStorage.getItem("access_token")})).data;
+      const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/addroom`, {values ,Images,Length ,tokenv:localStorage.getItem("access_token")})).data;
       Swal.fire("Congratulations", "Your Room Added Successfully", "success");
     //  console.log(data)
       form.resetFields();
       setImagevalues(emptyState)
+
+      setImages(Images.splice(0, Images.length))
+      window.location.reload();
+     // console.log(Images)
     } catch (error) {
       console.log(error);
       setError(error);
@@ -80,7 +85,7 @@ const[loadingDelete,setLoadingDelete]=useState(false);
     setLoading(true);
     try {
       const data = (await axios.post(`${process.env.REACT_APP_GLOBAL_API}/api/rooms/getallrooms`)).data;
-      console.log(data.length)
+    //  console.log(data.length)
       setLength(data.length);
     } catch (error) {
       console.log(error);
@@ -106,6 +111,8 @@ const[loadingDelete,setLoadingDelete]=useState(false);
               setLoadingDelete={setLoadingDelete}
               visible={visible}
               setVisible={setVisible}
+              Images={Images}
+              setImages={setImages}
        
             />
           </div>
@@ -185,39 +192,7 @@ const[loadingDelete,setLoadingDelete]=useState(false);
       >
         <InputNumber min={1} defaultChecked={1} />
       </Form.Item>
-      <Form.Item
-        name="imageurl1"
-        label="imageurl1"
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        name="imageurl2"
-        label="imageurl2"
-        rules={[
-          {
-            //required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        name="imageurl3"
-        label="imageurl3"
-        rules={[
-          {
-            //required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+     
       <Form.Item
         name="type"
         label="type"
